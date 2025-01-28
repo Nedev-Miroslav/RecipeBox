@@ -11,6 +11,7 @@ spring:
     cache: false
     check-template-location: true
     prefix: file:./src/main/resources/templates/
+#    enabled: true
 
 
   servlet:
