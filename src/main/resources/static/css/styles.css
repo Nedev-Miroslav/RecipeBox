@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+
+body {
+    background-image: url("/images/mainPicture.jpg");
+
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.firstCont{
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+
+.a-col {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 16px;
+}
