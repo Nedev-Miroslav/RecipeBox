@@ -1,0 +1,62 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head::head}"></head>
+
+<body>
+<main>
+  <h1 class="text-center mt-3"><span class="badge my-title">Login</span></h1>
+  <div class="d-flex justify-content-center">
+
+
+
+      <form
+              class="mx-auto w-25 bg-blur rounded"
+              method="POST"
+
+      >
+
+        <div>
+
+          <div class="col-auto">
+            <label for="inputUsername" class="h4 mb-2">Username</label>
+          </div>
+          <div class="form-group mb-3">
+            <input
+
+                    type="text"
+                    name="username"
+                    required
+                    id="inputUsername"
+                    class="form-control"
+                    aria-describedby="usernameHelpInline">
+
+          </div>
+
+        </div>
+        <div class="form-group mb-3">
+          <div class="col-auto">
+            <label for="inputPassword" class="h4 mb-2">Password</label>
+          </div>
+          <div class="col-auto">
+            <input
+
+                    type="password"
+                    name="password"
+                    required
+                    id="inputPassword" class="form-control"
+                    aria-describedby="passwordHelpInline">
+
+
+          </div>
+        </div>
+        <br>
+        <div class="button-holder d-flex justify-content-center">
+          <button type="submit" class="btn btn-success mb-3 text-white-50" value="Login">Login</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>
