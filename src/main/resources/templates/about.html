@@ -1,0 +1,32 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head}"></head>
+<body>
+<div class="container about-container">
+    <div class="about-title">
+        <h1 class="text-center text-white">Welcome to RecipeBox!</h1>
+        <p class="text-center text-white">Your go-to digital space for culinary inspiration.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 about-card">
+            <img src="/images/recipe1.jpg" class="about-img" alt="Cooking">
+            <p class="about-text">🔪 Discover new recipes and enhance your cooking skills.</p>
+        </div>
+        <div class="col-md-4 about-card">
+            <img src="/images/recipe2.jpg" class="about-img" alt="Ingredients">
+            <p class="about-text">🥕 Organize your favorite ingredients and dishes in one place.</p>
+        </div>
+        <div class="col-md-4 about-card">
+            <img src="/images/recipe3.jpg" class="about-img" alt="Sharing">
+            <p class="about-text">📖 Share delicious recipes with your friends and family!</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/recipes" class="btn btn-success btn-lg about-btn text-white-50">Explore Recipes</a>
+    </div>
+</div>
+
+</body>
+</html>

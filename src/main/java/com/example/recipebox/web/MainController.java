@@ -29,6 +29,10 @@ public class MainController {
         return "recipe-add";
     }
 
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
 
 
 }
