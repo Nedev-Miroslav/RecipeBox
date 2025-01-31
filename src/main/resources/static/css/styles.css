@@ -65,7 +65,8 @@ body {
     text-align: center;
 }
 
-.custom-select{display:inline-block;
+.custom-select{
+    display:inline-block;
     width:100%;
     height:calc(2.25rem + 2px);
     padding:.375rem 1.75rem .375rem .75rem;
@@ -79,4 +80,44 @@ body {
     -webkit-appearance:none;
     -moz-appearance:none;
 }
+
+.custom-file-upload {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload label {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+.custom-file-upload label:hover {
+    background-color: #45a049;
+}
+
+
+.custom-file-upload label:focus,
+.custom-file-upload input[type="file"]:focus + label {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 
