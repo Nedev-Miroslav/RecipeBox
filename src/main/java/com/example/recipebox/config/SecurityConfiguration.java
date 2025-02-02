@@ -1,4 +1,4 @@
-package com.example.recipebox.congig;
+package com.example.recipebox.config;
 
 import com.example.recipebox.repository.UserRepository;
 
