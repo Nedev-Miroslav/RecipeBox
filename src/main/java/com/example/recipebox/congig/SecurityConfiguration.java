@@ -1,5 +1,9 @@
 package com.example.recipebox.congig;
 
+import com.example.recipebox.repository.UserRepository;
+
+import com.example.recipebox.service.RecipeBoxUserDetailsService;
+import com.example.recipebox.service.impl.RecipeBoxUserDetailsServiceImpl;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,8 +48,10 @@ public class SecurityConfiguration {
 
     }
 
-
-
+    @Bean
+    public RecipeBoxUserDetailsService userDetailsService(UserRepository userRepository){
+        return new RecipeBoxUserDetailsServiceImpl(userRepository);
+    }
 
 
     @Bean
