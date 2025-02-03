@@ -1,7 +1,22 @@
 <header class="firstCont" xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
-    <div>
-        <a class="navbar-brand" th:href="@{index}"><img alt="logo" src="/images/logo.png" class="logo"></a>
+    <div class="firstCont d-flex align-items-center">
+        <a class="navbar-brand" th:href="@{index}">
+            <img alt="logo" src="/images/logo.png" class="logo">
+        </a>
+
+        <div class="container d-flex align-items-center" sec:authorize="isAuthenticated()">
+            <div class="row justify-content-lg-start d-flex align-items-center">
+                <p class="text-left text-white bold mb-0">Welcome to RecipeBox, </p>
+                <span class="bold left-space">
+                <p class="mb-0 username_name">
+                    <th:block sec:authentication="name"></th:block>
+                </p>
+            </span>
+            </div>
+        </div>
     </div>
+
+
 
     <div>
         <nav class="navbar navbar-expand-lg ">

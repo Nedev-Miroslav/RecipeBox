@@ -26,6 +26,14 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.username_name{
+    color: darkgreen;
+    font-weight: bold;
+    padding-top: 6px;
+    font-size: 1.1rem;
+
+}
+
 .btn-reset {
     background: none;
     border: none;
