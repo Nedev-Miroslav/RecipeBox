@@ -24,7 +24,6 @@ public class InitAdmin implements CommandLineRunner {
         this.roleRepository = roleRepository;
     }
 
-
     @Override
     public void run(String... args) throws Exception {
 
@@ -44,6 +43,4 @@ public class InitAdmin implements CommandLineRunner {
 
         userRepository.save(user);
     }
-
-
 }

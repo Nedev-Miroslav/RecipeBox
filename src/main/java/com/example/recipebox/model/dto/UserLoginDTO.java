@@ -2,7 +2,6 @@ package com.example.recipebox.model.dto;
 
 public class UserLoginDTO {
 
-
     private String username;
 
     private String password;

@@ -10,19 +10,20 @@
 
 
       <form
-              class="mx-auto w-25 bg-blur rounded"
-              method="POST"
-
-      >
+              th:method="POST"
+              th:action="@{/users/login}"
+              th:object="${loginData}"
+              class="mx-auto w-25 bg-blur rounded">
 
         <div>
-
+          <div class=" bg-danger rounded"  th:if="${showError}">Incorrect username or password!</div>
           <div class="col-auto">
             <label for="inputUsername" class="h4 mb-2">Username</label>
           </div>
           <div class="form-group mb-3">
             <input
-
+                    th:field="*{username}"
+                    th:errorclass="bg-danger"
                     type="text"
                     name="username"
                     required
@@ -39,7 +40,8 @@
           </div>
           <div class="col-auto">
             <input
-
+                    th:field="*{password}"
+                    th:errorclass="bg-danger"
                     type="password"
                     name="password"
                     required
