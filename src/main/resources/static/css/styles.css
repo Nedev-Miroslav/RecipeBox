@@ -34,6 +34,35 @@ body {
 
 }
 
+.top-box {
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 6px rgba(104, 104, 104, 0.8);
+    padding: 0.5rem;
+    position: absolute;
+    top: 10em;
+    left: 4em;
+    border-radius: 10px;
+}
+
+.top-box a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.top-box img {
+    width: 45px;
+    height: auto;
+    margin-right: 6px;
+}
+
+
 .btn-reset {
     background: none;
     border: none;

@@ -1,5 +1,6 @@
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 
 <head th:replace="~{fragments/head::head}"></head>
 <body class="d-flex flex-column min-vh-100">
@@ -7,6 +8,13 @@
     <header th:replace="~{fragments/header::header}"></header>
 
     <main class="container flex-grow-1">
+
+        <div class="top-box" sec:authorize="isAuthenticated()">
+            <a th:href="@{recipe-add}" class="btn">
+                <img src="/images/recipe.png" alt="">
+                <h4 class="mb-0">ADD RECIPE</h4>
+                </a>
+        </div>
 
 
 
