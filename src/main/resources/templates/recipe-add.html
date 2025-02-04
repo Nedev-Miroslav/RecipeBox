@@ -12,7 +12,9 @@
 
     <form
             class="mx-auto w-25 bg-blur rounded"
-            method="POST"
+            th:method="POST"
+            th:action="@{/recipe-add}"
+            th:object="${recipeData}"
 
     >
         <div class="form-group mb-3">
@@ -24,8 +26,8 @@
                     class="form-control"
                     id="name"
                     name="name"
-
-            >
+                    th:field="*{name}">
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></div>
 
         </div>
 
@@ -38,8 +40,9 @@
                     class="form-control"
                     id="ingredients"
                     name="ingredients"
-
-            ></textarea>
+                    th:field="*{ingredients}">
+            <div class="text-danger" th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}" ></div>
+            </textarea>
 
         </div>
 
@@ -52,8 +55,9 @@
                     class="form-control"
                     id="instructions"
                     name="instructions"
-
-            ></textarea>
+                    th:field="*{instructions}">
+            <div class="text-danger" th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}" ></div>
+            </textarea>
 
         </div>
 
@@ -66,10 +70,12 @@
                     class="custom-select"
                     id="category"
                     name="category"
+                    th:field="*{categoryType}"
 
             >
-                <option value="">Select category</option>
-
+                <option value="Category Type" selected>Select category</option>
+                <option th:each="categoryType: ${categoryTypes}" th:value="${categoryType}">Category type
+                </option>
             </select>
 
             <small class="invalid-feedback text-danger">Category error message</small>
@@ -87,6 +93,7 @@
                     name="addPicture"
                     id="picture">
             <label for="picture">📷 Upload Image</label>
+            <div class="text-danger" th:if="${recipeError}">Please upload valid picture!</div>
         </div>
 
 

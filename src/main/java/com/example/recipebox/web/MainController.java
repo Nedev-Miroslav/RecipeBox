@@ -15,11 +15,6 @@ public class MainController {
     }
 
 
-    @GetMapping("/recipe-add")
-    public String recipeAdd() {
-        return "recipe-add";
-    }
-
     @GetMapping("/about")
     public String about() {
         return "about";

@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository repository;
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
-//    private final LoggedUserService loggedUserService;
 
     public UserServiceImpl(UserRepository userRepository, RoleRepository repository, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;

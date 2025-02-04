@@ -13,10 +13,10 @@ public class Recipe extends BaseEntity{
     @Column(nullable = false)
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String ingredients;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String instructions;
 
     @Enumerated(EnumType.STRING)
