@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -41,6 +42,7 @@ public class RecipeServiceImpl implements RecipeService {
             return false;
         }
 
+
         String originalFilename = file.getOriginalFilename();
         String extension = "";
         if (originalFilename.contains(".")) {
@@ -49,12 +51,14 @@ public class RecipeServiceImpl implements RecipeService {
             return false;
         }
 
+
         String uniqueFilename = UUID.randomUUID().toString() + extension;
 
-        Path uploadDirectory = Paths.get("src", "main", "resources", "static", "uploads")
-                .normalize()
-                .toAbsolutePath();
 
+        Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
+        if (!Files.exists(uploadDirectory)) {
+            Files.createDirectories(uploadDirectory);
+        }
 
         Path destinationFile = uploadDirectory.resolve(uniqueFilename);
 
@@ -64,12 +68,25 @@ public class RecipeServiceImpl implements RecipeService {
 
         User user = loggedUserService.getUser();
 
+
         Recipe toInsert = modelMapper.map(data, Recipe.class);
         toInsert.setAuthor(user);
-        toInsert.setImageUrl(destinationFile.toString());
+        toInsert.setImageUrl(uniqueFilename);
 
         recipeRepository.save(toInsert);
         return true;
-
     }
+
+
+    @Override
+    public List<Recipe> findAllRecipes() {
+        return recipeRepository.findAll();
+    }
+
+    @Override
+    public Recipe findRecipeById(Long id) {
+        return recipeRepository.findById(id).orElseThrow(() -> new RuntimeException("Recipe not found"));
+    }
+
+
 }

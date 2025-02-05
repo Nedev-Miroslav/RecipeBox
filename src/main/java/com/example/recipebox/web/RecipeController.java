@@ -22,6 +22,7 @@ public class RecipeController {
 
     private final RecipeService recipeService;
 
+
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
@@ -68,8 +69,9 @@ public class RecipeController {
             return "redirect:/recipe-add";
         }
 
-        return "redirect:/recipes";
+        return "redirect:/recipe-list";
     }
+
 
 
 }

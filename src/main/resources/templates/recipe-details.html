@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head::head}">
+
+</head>
+<body>
+<!--<title th:text="${recipe.name} + ' - Details'">Recipe Details</title>-->
+
+
+<h1 th:text="${recipe.name}"></h1>
+<div class="container">
+  <img th:src="@{${recipe.imageUrl}}" alt="Recipe Image" class="img-fluid">
+  <h3>Category: <span th:text="${recipe.categoryType}"></span></h3>
+  <h4>Ingredients:</h4>
+  <p th:text="${recipe.ingredients}"></p>
+  <h4>Instructions:</h4>
+  <p th:text="${recipe.instructions}"></p>
+</div>
+</body>
+</html>
