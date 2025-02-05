@@ -23,6 +23,7 @@ public class SecurityConfiguration {
                         authorizeRequest ->
                                 authorizeRequest
                                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                                        .requestMatchers("/uploads/**").permitAll()
                                         .requestMatchers("/", "/users/login", "/users/register", "/users/login-error", "/about").permitAll()
                                         .anyRequest()
                                         .authenticated()

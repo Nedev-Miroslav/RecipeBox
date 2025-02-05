@@ -51,9 +51,10 @@ public class RecipeServiceImpl implements RecipeService {
 
         String uniqueFilename = UUID.randomUUID().toString() + extension;
 
-        Path uploadDirectory = Paths.get("src", "main", "resources", "uploads")
+        Path uploadDirectory = Paths.get("src", "main", "resources", "static", "uploads")
                 .normalize()
                 .toAbsolutePath();
+
 
         Path destinationFile = uploadDirectory.resolve(uniqueFilename);
 

@@ -15,7 +15,7 @@
             th:method="POST"
             th:action="@{/recipe-add}"
             th:object="${recipeData}"
-
+            enctype="multipart/form-data"
     >
         <div class="form-group mb-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
@@ -89,7 +89,7 @@
         <div class="form-group m-3 custom-file-upload">
             <input
                     type="file"
-                    name="addPicture"
+                    name="imageUrl"
                     id="picture">
             <label for="picture">📷 Upload Image</label>
             <div class="text-danger" th:if="${recipeError}">Please upload valid picture!</div>
