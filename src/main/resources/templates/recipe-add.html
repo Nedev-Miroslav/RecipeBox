@@ -73,9 +73,8 @@
                     th:field="*{categoryType}"
 
             >
-                <option value="Category Type" selected>Select category</option>
-                <option th:each="categoryType: ${categoryTypes}" th:value="${categoryType}">Category type
-                </option>
+                <option value="" >Select category</option>
+                <option th:each="categoryType: ${categoryTypes}" th:value="${categoryType}" th:text="${categoryType}">Category type</option>
             </select>
 
             <small class="invalid-feedback text-danger">Category error message</small>
