@@ -86,13 +86,12 @@
                 <label for="picture" class="h4 mb-2">Attach the picture</label>
             </div>
         </div>
+
         <div class="form-group m-3 custom-file-upload">
-            <input
-                    type="file"
-                    name="imageUrl"
-                    id="picture">
+            <input type="file" name="imageUrl" id="picture">
             <label for="picture">📷 Upload Image</label>
-            <div class="text-danger" th:if="${recipeError}">Please upload valid picture!</div>
+            <div id="file-name" class="text-white-50"></div>
+            <div class="text-danger" th:if="${recipeError}">Please upload a valid picture!</div>
         </div>
 
 
