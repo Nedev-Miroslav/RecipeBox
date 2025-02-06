@@ -4,7 +4,7 @@
     <title th:text="${recipe.name} + ' - Details'">Recipe Details</title>
 </head>
 <body>
-
+<script src="/js/favorites.js"></script>
 
 
 <div class="recipe-container">
@@ -24,8 +24,9 @@
         <p th:text="${recipe.instructions}"></p>
     </div>
 
-    <form th:action="@{/favorites/toggle/{id}(id=${recipe.id})}" method="post">
+    <form th:action="@{/favorites/toggle/{id}(id=${recipe.id})}" method="post" id="favoriteForm">
         <button type="submit" class="btn-favorite"
+                th:classappend="${isFavorite} ? 'heart-red' : 'heart-white'"
                 th:text="${isFavorite} ? '❤️ Remove from Favorites' : '🤍 Add to Favorites'">
         </button>
     </form>
