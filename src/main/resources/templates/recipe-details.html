@@ -24,6 +24,12 @@
         <p th:text="${recipe.instructions}"></p>
     </div>
 
+    <form th:action="@{/favorites/toggle/{id}(id=${recipe.id})}" method="post">
+        <button type="submit" class="btn-favorite"
+                th:text="${isFavorite} ? '❤️ Remove from Favorites' : '🤍 Add to Favorites'">
+        </button>
+    </form>
+
     <div class="text-center">
         <a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
     </div>

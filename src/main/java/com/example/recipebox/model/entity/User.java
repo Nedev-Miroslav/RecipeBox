@@ -22,7 +22,7 @@ public class User extends BaseEntity{
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "favorite_recipes",
             joinColumns = @JoinColumn(name = "user_id"),

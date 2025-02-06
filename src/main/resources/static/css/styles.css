@@ -319,4 +319,22 @@ body {
     background-color: #45a049;
 }
 
+.btn-favorite {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-favorite:hover {
+    background-color: #e60000;
+}
+
+
 
