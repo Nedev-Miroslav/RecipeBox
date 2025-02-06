@@ -20,6 +20,12 @@
                         <h5 class="recipe-title text-center">
                             <span th:text="${recipe.name}"></span>
                         </h5>
+                        <form   th:if="${#authentication.name == recipe.author.username}"
+                                th:method="delete"
+                                th:action="@{/recipes/{id}(id = ${recipe.id})}">
+
+                            <button class="btn-delete"><i>🗑️</i>Delete</button>
+                        </form>
                     </div>
                 </div>
             </a>

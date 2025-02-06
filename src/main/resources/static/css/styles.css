@@ -336,5 +336,24 @@ body {
     background-color: #e60000;
 }
 
+.btn-delete {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
 
+.btn-delete:hover {
+    background-color: #cc0000;
+}
 
+.btn-delete i {
+    font-size: 16px;
+}

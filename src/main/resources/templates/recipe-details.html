@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head::head}">
-    <title th:text="${recipe.name} + ' - Details'">Recipe Details</title>
+<!--    <title th:text="${recipe.name} + ' - Details'">Recipe Details</title>-->
 </head>
 <body>
 <script src="/js/favorites.js"></script>
@@ -30,6 +30,7 @@
                 th:text="${isFavorite} ? '❤️ Remove from Favorites' : '🤍 Add to Favorites'">
         </button>
     </form>
+
 
     <div class="text-center">
         <a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
