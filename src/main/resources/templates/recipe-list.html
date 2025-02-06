@@ -17,7 +17,7 @@
                 <div class="card mb-4">
                     <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top" alt="Recipe Image">
                     <div class="card-body">
-                        <h5 class="card-title text-center">
+                        <h5 class="recipe-title text-center">
                             <span th:text="${recipe.name}"></span>
                         </h5>
                     </div>

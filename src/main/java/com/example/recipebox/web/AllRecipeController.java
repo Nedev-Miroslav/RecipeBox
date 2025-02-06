@@ -23,6 +23,4 @@ public class AllRecipeController {
         return "recipe-list";
     }
 
-
-
 }

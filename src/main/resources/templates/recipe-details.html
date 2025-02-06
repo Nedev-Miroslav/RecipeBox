@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head::head}">
-
+    <title th:text="${recipe.name} + ' - Details'">Recipe Details</title>
 </head>
 <body>
-<!--<title th:text="${recipe.name} + ' - Details'">Recipe Details</title>-->
 
 
-<h1 th:text="${recipe.name}"></h1>
-<div class="container">
-  <img th:src="@{${recipe.imageUrl}}" alt="Recipe Image" class="img-fluid">
-  <h3>Category: <span th:text="${recipe.categoryType}"></span></h3>
-  <h4>Ingredients:</h4>
-  <p th:text="${recipe.ingredients}"></p>
-  <h4>Instructions:</h4>
-  <p th:text="${recipe.instructions}"></p>
+
+<div class="recipe-container">
+    <h1 class="recipe-title" th:text="${recipe.name}"></h1>
+    <p class="recipe-author">By <span th:text="${recipe.author.username}"></span></p>
+    <p class="recipe-category">Category: <span th:text="${recipe.categoryType}"></span></p>
+
+    <img class="recipe-image" th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" alt="Recipe Image">
+
+    <div class="recipe-section">
+        <h4>Ingredients:</h4>
+        <p th:text="${recipe.ingredients}"></p>
+    </div>
+
+    <div class="recipe-section">
+        <h4>Instructions:</h4>
+        <p th:text="${recipe.instructions}"></p>
+    </div>
+
+    <div class="text-center">
+        <a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
+    </div>
 </div>
+
 </body>
 </html>
