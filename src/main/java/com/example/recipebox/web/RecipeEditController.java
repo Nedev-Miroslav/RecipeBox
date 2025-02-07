@@ -1,6 +1,7 @@
 package com.example.recipebox.web;
 
 import com.example.recipebox.model.dto.AddRecipeDTO;
+import com.example.recipebox.model.enums.CategoryType;
 import com.example.recipebox.service.RecipeService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ public class RecipeEditController {
         AddRecipeDTO recipeData = recipeService.getRecipeDTOById(id);
         model.addAttribute("recipeData", recipeData);
         model.addAttribute("recipeId", id);
+        model.addAttribute("categoryTypes", CategoryType.values());
         return "recipe-edit"; // Това ще бъде новата страница за редакция
     }
 
