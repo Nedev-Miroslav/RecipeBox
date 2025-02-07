@@ -1,0 +1,49 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head}"></head>
+
+<body>
+<header th:replace="~{fragments/header::header}"></header>
+<main class="container">
+    <h1 class="text-center mt-3"><span class="badge my-title">Edit Recipe</span></h1>
+
+    <form
+            class="mx-auto w-25 bg-blur rounded"
+            th:method="POST"
+            th:action="@{/recipe-edit/{id}(id=${recipeId})}"
+            th:object="${recipeData}"
+            enctype="multipart/form-data">
+
+        <div class="form-group mb-3">
+            <label for="name" class="h4 mb-2">Name</label>
+            <input type="text" class="form-control" id="name" name="name" th:field="*{name}">
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="ingredients" class="h4 mb-2">Ingredients</label>
+            <textarea class="form-control" id="ingredients" name="ingredients" th:field="*{ingredients}"></textarea>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="instructions" class="h4 mb-2">Instructions</label>
+            <textarea class="form-control" id="instructions" name="instructions" th:field="*{instructions}"></textarea>
+        </div>
+
+        <div class="form-group m-3 custom-file-upload">
+            <input type="file" name="imageUrl" id="picture">
+            <label for="picture">📷 Upload Image</label>
+            <div id="file-name" class="text-white-50"></div>
+        </div>
+
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Update Recipe</button>
+        </div>
+
+    </form>
+</main>
+
+<footer th:replace="~{fragments/footer::footer}"></footer>
+</body>
+</html>

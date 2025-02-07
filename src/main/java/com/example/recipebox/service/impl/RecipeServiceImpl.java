@@ -32,14 +32,12 @@ public class RecipeServiceImpl implements RecipeService {
     private final LoggedUserService loggedUserService;
 
 
-
     public RecipeServiceImpl(RecipeRepository repository, UserRepository userRepository, ModelMapper modelMapper, LoggedUserService loggedUserService) {
         this.recipeRepository = repository;
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.loggedUserService = loggedUserService;
     }
-
 
     @Override
     public boolean createRecipe(AddRecipeDTO data, MultipartFile file) throws IOException {
@@ -57,7 +55,6 @@ public class RecipeServiceImpl implements RecipeService {
             return false;
         }
 
-
         String uniqueFilename = UUID.randomUUID().toString() + extension;
 
 
@@ -74,7 +71,6 @@ public class RecipeServiceImpl implements RecipeService {
 
         User user = loggedUserService.getUser();
 
-
         Recipe toInsert = modelMapper.map(data, Recipe.class);
         toInsert.setAuthor(user);
         toInsert.setImageUrl(uniqueFilename);
@@ -82,7 +78,6 @@ public class RecipeServiceImpl implements RecipeService {
         recipeRepository.save(toInsert);
         return true;
     }
-
 
     @Override
     public List<Recipe> findAllRecipes() {
@@ -114,8 +109,6 @@ public class RecipeServiceImpl implements RecipeService {
             userRepository.save(user);
         }
 
-
-
         if (recipe.getImageUrl() != null && !recipe.getImageUrl().isEmpty()) {
             try {
                 Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
@@ -128,5 +121,79 @@ public class RecipeServiceImpl implements RecipeService {
         }
 
         recipeRepository.delete(recipe);
+    }
+
+    private String saveImage(MultipartFile file) throws IOException {
+        String originalFilename = file.getOriginalFilename();
+        String extension = "";
+
+        if (originalFilename.contains(".")) {
+            extension = originalFilename.substring(originalFilename.lastIndexOf('.'));
+        } else {
+            throw new IOException("Invalid file name");
+        }
+
+        String uniqueFilename = UUID.randomUUID().toString() + extension;
+
+        Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
+        if (!Files.exists(uploadDirectory)) {
+            Files.createDirectories(uploadDirectory);
+        }
+
+        Path destinationFile = uploadDirectory.resolve(uniqueFilename);
+
+        try (InputStream inputStream = file.getInputStream()) {
+            Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
+        }
+
+        return uniqueFilename;
+    }
+
+    @Override
+    public AddRecipeDTO getRecipeDTOById(Long id) {
+        Recipe recipe = recipeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Recipe not found"));
+        return modelMapper.map(recipe, AddRecipeDTO.class);
+    }
+
+    private void deleteImage(String filename) {
+        try {
+            Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
+            Path imagePath = uploadDirectory.resolve(filename);
+
+            Files.deleteIfExists(imagePath);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to delete old image: " + filename, e);
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean updateRecipe(Long id, AddRecipeDTO updatedRecipe, MultipartFile file) throws IOException {
+        Recipe recipe = recipeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Recipe not found"));
+
+        if (!recipe.getAuthor().equals(loggedUserService.getUser())) {
+            throw new SecurityException("You are not the author of this recipe!");
+        }
+
+        recipe.setName(updatedRecipe.getName());
+        recipe.setIngredients(updatedRecipe.getIngredients());
+        recipe.setInstructions(updatedRecipe.getInstructions());
+
+        if (file != null && !file.isEmpty()) {
+
+            String oldImage = recipe.getImageUrl();
+
+            String newFilename = saveImage(file);
+            recipe.setImageUrl(newFilename);
+
+            if (oldImage != null && !oldImage.isEmpty()) {
+                deleteImage(oldImage);
+            }
+        }
+
+        recipeRepository.save(recipe);
+        return true;
     }
 }

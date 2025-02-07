@@ -15,4 +15,10 @@ public interface RecipeService {
     Recipe findRecipeById(Long id);
 
     void deleteRecipe(Long id);
+
+
+
+    AddRecipeDTO getRecipeDTOById(Long id);
+    boolean updateRecipe(Long id, AddRecipeDTO updatedRecipe, MultipartFile file) throws IOException;
+
 }
