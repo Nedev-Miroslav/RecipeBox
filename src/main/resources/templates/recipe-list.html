@@ -10,6 +10,7 @@
 <header th:replace="~{fragments/header::header}"></header>
 
 <h1 class="justify-content-center">All Recipes</h1>
+<main class="container flex-grow-1">
 <div class="container">
     <div class="row">
         <div class="col-md-4" th:each="recipe : ${recipes}">
@@ -32,7 +33,7 @@
         </div>
     </div>
 </div>
-
-
+</main>
+<footer th:replace="~{fragments/footer::footer}"></footer>
 </body>
 </html>
