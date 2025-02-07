@@ -4,7 +4,6 @@ html {
     color: #333;
 }
 
-
 body {
     background-image: url("/images/mainPicture.jpg");
 
@@ -16,7 +15,6 @@ body {
     margin: 30px 50px;
     line-height: 1.4;
 }
-
 
 .firstCont{
     display: grid;
@@ -62,14 +60,12 @@ body {
     margin-right: 6px;
 }
 
-
 .btn-reset {
     background: none;
     border: none;
     cursor: pointer;
     font: inherit;
 }
-
 
 .a-col {
     color: white;
@@ -128,7 +124,6 @@ body {
     cursor: pointer;
 }
 
-
 .custom-file-upload input[type="file"] {
     display: none;
 }
@@ -146,11 +141,9 @@ body {
     text-align: center;
 }
 
-
 .custom-file-upload label:hover {
     background-color: #45a049;
 }
-
 
 .custom-file-upload label:focus,
 .custom-file-upload input[type="file"]:focus + label {
@@ -216,7 +209,6 @@ body {
     transform: translateY(-3px);
 }
 
-
 .container {
     margin-top: 20px;
 }
@@ -239,8 +231,6 @@ body {
     height: 200px;
     object-fit: cover;
 }
-
-
 
 .recipe-container {
     max-width: 800px;
@@ -301,7 +291,6 @@ body {
     line-height: 1.5;
 }
 
-
 .btn-back {
     display: inline-block;
     margin-top: 20px;
@@ -343,7 +332,8 @@ body {
     justify-content: center;
     gap: 5px;
     padding: 8px 15px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     border-radius: 5px;
