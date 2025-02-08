@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head::head}">
-<!--    <title th:text="${recipe.name} + ' - Details'">Recipe Details</title>-->
 </head>
 <body>
 <script src="/js/favorites.js"></script>
@@ -36,8 +35,7 @@
         <a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
     </div>
 </div>
-
-<!-- 🔹 Форма за добавяне на коментар -->
+<div class="recipe-container">
 <div class="comment-section">
     <h3>Leave a Comment:</h3>
     <form th:action="@{/recipe-details/{id}/comment(id=${recipe.id})}" method="post">
@@ -51,16 +49,15 @@
 
 <div class="comments-section">
     <h3>Comments</h3>
-    <span>Comments </span>
-
+    <ul class="comment-box">
         <li th:each="comment : ${comments}">
-            <strong th:text="${comment.user.username}"></strong>:
+            <strong th:text="${comment.user.username}"></strong>
             <span th:text="${comment.content}"></span>
             <br>
             <small th:text="${#temporals.format(comment.timestamp, 'dd-MM-yyyy HH:mm')}"></small>
         </li>
     </ul>
 </div>
-
+</div>
 </body>
 </html>
