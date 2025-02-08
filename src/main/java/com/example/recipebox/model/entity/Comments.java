@@ -7,11 +7,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "comments")
 public class Comments extends BaseEntity{
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 

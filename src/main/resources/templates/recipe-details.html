@@ -37,5 +37,30 @@
     </div>
 </div>
 
+<!-- 🔹 Форма за добавяне на коментар -->
+<div class="comment-section">
+    <h3>Leave a Comment:</h3>
+    <form th:action="@{/recipe-details/{id}/comment(id=${recipe.id})}" method="post">
+        <input type="hidden" name="recipeId" th:value="${recipe.id}">
+
+        <textarea name="content" placeholder="Write a comment..." required></textarea>
+
+        <button type="submit" class="btn-comment">Add Comment</button>
+    </form>
+</div>
+
+<div class="comments-section">
+    <h3>Comments</h3>
+    <span>Comments </span>
+
+        <li th:each="comment : ${comments}">
+            <strong th:text="${comment.user.username}"></strong>:
+            <span th:text="${comment.content}"></span>
+            <br>
+            <small th:text="${#temporals.format(comment.timestamp, 'dd-MM-yyyy HH:mm')}"></small>
+        </li>
+    </ul>
+</div>
+
 </body>
 </html>

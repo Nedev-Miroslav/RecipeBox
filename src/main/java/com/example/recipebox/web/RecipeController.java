@@ -1,7 +1,10 @@
 package com.example.recipebox.web;
 
 import com.example.recipebox.model.dto.AddRecipeDTO;
+import com.example.recipebox.model.entity.Comments;
+import com.example.recipebox.model.entity.Recipe;
 import com.example.recipebox.model.enums.CategoryType;
+import com.example.recipebox.service.CommentService;
 import com.example.recipebox.service.RecipeService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -13,15 +16,17 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class RecipeController {
 
     private final RecipeService recipeService;
+    private final CommentService commentService;
 
-
-    public RecipeController(RecipeService recipeService) {
+    public RecipeController(RecipeService recipeService, CommentService commentService) {
         this.recipeService = recipeService;
+        this.commentService = commentService;
     }
 
     @ModelAttribute("recipeData")
@@ -55,8 +60,6 @@ public class RecipeController {
             return "redirect:/recipe-add";
         }
 
-
-
         boolean success = recipeService.createRecipe(data, file);
 
 
@@ -78,4 +81,20 @@ public class RecipeController {
         return "redirect:/recipe-list";
     }
 
+    @GetMapping("/recipe-details/{id}")
+    public String recipeDetails(@PathVariable Long id, Model model) {
+        Recipe recipe = recipeService.findRecipeById(id);
+        List<Comments> comments = commentService.getCommentsByRecipe(id);
+
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("comments", comments);
+
+        return "recipe-details";
+    }
+
+    @PostMapping("/recipe-details/{id}/comment")
+    public String addComment(@PathVariable Long id, @RequestParam String content) {
+        recipeService.addComment(id, content);
+        return "redirect:/recipe-details/" + id;
+    }
 }

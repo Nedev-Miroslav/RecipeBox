@@ -1,8 +1,10 @@
 package com.example.recipebox.service.impl;
 
 import com.example.recipebox.model.dto.AddRecipeDTO;
+import com.example.recipebox.model.entity.Comments;
 import com.example.recipebox.model.entity.Recipe;
 import com.example.recipebox.model.entity.User;
+import com.example.recipebox.repository.CommentRepository;
 import com.example.recipebox.repository.RecipeRepository;
 import com.example.recipebox.repository.UserRepository;
 import com.example.recipebox.service.LoggedUserService;
@@ -19,21 +21,23 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository recipeRepository;
+    private final CommentRepository commentRepository;
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final LoggedUserService loggedUserService;
 
 
-    public RecipeServiceImpl(RecipeRepository repository, UserRepository userRepository, ModelMapper modelMapper, LoggedUserService loggedUserService) {
+    public RecipeServiceImpl(RecipeRepository repository, CommentRepository commentRepository, UserRepository userRepository, ModelMapper modelMapper, LoggedUserService loggedUserService) {
         this.recipeRepository = repository;
+        this.commentRepository = commentRepository;
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.loggedUserService = loggedUserService;
@@ -101,11 +105,11 @@ public class RecipeServiceImpl implements RecipeService {
             throw new SecurityException("You are not the author of this recipe!");
         }
 
-        List<User> usersWithFavorite = userRepository.findAllByFavoritesContaining(recipe);
+        commentRepository.deleteByRecipe(recipe);
 
+        List<User> usersWithFavorite = userRepository.findAllByFavoritesContaining(recipe);
         for (User user : usersWithFavorite) {
-            Recipe managedRecipe = recipeRepository.findById(recipeId).orElseThrow();
-            user.getFavorites().remove(managedRecipe);
+            user.getFavorites().remove(recipe);
             userRepository.save(user);
         }
 
@@ -113,7 +117,6 @@ public class RecipeServiceImpl implements RecipeService {
             try {
                 Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
                 Path imagePath = uploadDirectory.resolve(recipe.getImageUrl());
-
                 Files.deleteIfExists(imagePath);
             } catch (IOException e) {
                 throw new RuntimeException("Failed to delete image file: " + e.getMessage());
@@ -195,5 +198,26 @@ public class RecipeServiceImpl implements RecipeService {
 
         recipeRepository.save(recipe);
         return true;
+    }
+
+    @Override
+    public List<Comments> getCommentsByRecipeId(Long recipeId) {
+        return commentRepository.findByRecipeId(recipeId);
+    }
+
+    @Override
+    public void addComment(Long recipeId, String content) {
+        Recipe recipe = recipeRepository.findById(recipeId)
+                .orElseThrow(() -> new RuntimeException("Recipe not found"));
+
+        User user = loggedUserService.getUser();
+
+        Comments comment = new Comments();
+        comment.setRecipe(recipe);
+        comment.setUser(user);
+        comment.setContent(content);
+        comment.setTimestamp(LocalDateTime.now());
+
+        commentRepository.save(comment);
     }
 }

@@ -30,7 +30,7 @@ public class RecipeEditController {
         model.addAttribute("recipeData", recipeData);
         model.addAttribute("recipeId", id);
         model.addAttribute("categoryTypes", CategoryType.values());
-        return "recipe-edit"; // Това ще бъде новата страница за редакция
+        return "recipe-edit";
     }
 
 

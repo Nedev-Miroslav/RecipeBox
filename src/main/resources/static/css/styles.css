@@ -366,3 +366,54 @@ body {
     width: 100%;
     max-width: 300px;
 }
+
+
+.comment-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.btn-comment {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-comment:hover {
+    background-color: #0056b3;
+}
+
+.comments-container {
+    margin-top: 30px;
+}
+
+.comment-box {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment-box strong {
+    color: #333;
+}
+
+.comment-box small {
+    display: block;
+    color: gray;
+    font-size: 12px;
+}
+

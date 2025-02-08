@@ -21,10 +21,4 @@ public class MainController {
     }
 
 
-//    @GetMapping("/recipes")
-//    public String recipes() {
-//        return "recipe-list";
-//    }
-
-
 }
