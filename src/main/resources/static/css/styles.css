@@ -232,6 +232,14 @@ body {
     object-fit: cover;
 }
 
+.title{
+    color: white;
+    font-weight: bold;
+    padding: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
 .recipe-container {
     max-width: 800px;
     margin: 40px auto;
@@ -465,25 +473,4 @@ body {
 .comment-box:hover {
     background: #eef7ee;
     transition: background 0.3s ease;
-}
-
-.btn-load-comments {
-    margin: 10px 0;
-    padding: 10px 15px;
-    background-color: #008CBA;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-load-comments:hover {
-    background-color: #0077A3;
-    transform: scale(1.05);
 }
