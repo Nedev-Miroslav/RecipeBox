@@ -32,34 +32,6 @@ body {
 
 }
 
-.top-box {
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 6px rgba(104, 104, 104, 0.8);
-    padding: 0.5rem;
-    position: absolute;
-    top: 10em;
-    left: 4em;
-    border-radius: 10px;
-}
-
-.top-box a {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
-
-.top-box img {
-    width: 45px;
-    height: auto;
-    margin-right: 6px;
-}
-
 .btn-reset {
     background: none;
     border: none;
@@ -113,6 +85,28 @@ body {
     border-radius:.25rem;
     -webkit-appearance:none;
     -moz-appearance:none;
+}
+
+.section-box {
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.section-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.section-box img {
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
 .custom-file-upload {

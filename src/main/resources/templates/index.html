@@ -5,23 +5,39 @@
 <head th:replace="~{fragments/head::head}"></head>
 <body class="d-flex flex-column min-vh-100">
 
-    <header th:replace="~{fragments/header::header}"></header>
+<header th:replace="~{fragments/header::header}"></header>
 
-    <main class="container flex-grow-1">
+<main class="container flex-grow-1">
 
-        <div class="top-box" sec:authorize="isAuthenticated()">
-            <a th:href="@{recipe-add}" class="btn">
-                <img src="/images/recipe.png" alt="">
-                <h4 class="mb-0">ADD RECIPE</h4>
-                </a>
+
+    <div class="container mt-5">
+
+        <div class="row align-items-center mb-5 bg-white shadow rounded p-4 section-box">
+            <div class="col-md-6">
+                <h2 class="fw-bold text-success">Discover delicious recipes</h2>
+                <p>Browse thousands of recipes shared by culinary enthusiasts and professional chefs.</p>
+                <a class="btn btn-success btn-lg" th:href="@{recipe-list}">View recipes</a>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/food.jpg" class="img-fluid rounded shadow" alt="Delicious food">
+            </div>
         </div>
 
 
+        <div class="row align-items-center bg-white shadow rounded p-4 section-box">
+            <div class="col-md-6 order-md-2">
+                <h2 class="fw-bold text-primary">Learn more about us</h2>
+                <p>Find out more about our mission and passion for delicious food.</p>
+                <a class="btn btn-primary btn-lg" th:href="@{about}">Learn more</a>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="/images/about.jpg" class="img-fluid rounded shadow" alt="About us">
+            </div>
+        </div>
 
+    </div>
 
-
-    </main>
-
+</main>
 
 <footer th:replace="~{fragments/footer::footer}"></footer>
 
