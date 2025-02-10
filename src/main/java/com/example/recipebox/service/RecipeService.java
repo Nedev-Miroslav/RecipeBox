@@ -1,7 +1,6 @@
 package com.example.recipebox.service;
 
 import com.example.recipebox.model.dto.AddRecipeDTO;
-import com.example.recipebox.model.entity.Comments;
 import com.example.recipebox.model.entity.Recipe;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,7 +20,6 @@ public interface RecipeService {
 
     AddRecipeDTO getRecipeDTOById(Long id);
     boolean updateRecipe(Long id, AddRecipeDTO updatedRecipe, MultipartFile file) throws IOException;
-    List<Comments> getCommentsByRecipeId(Long recipeId);
     void addComment(Long recipeId, String content);
     List<Recipe> searchRecipes(String query);
 

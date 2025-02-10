@@ -201,11 +201,6 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Comments> getCommentsByRecipeId(Long recipeId) {
-        return commentRepository.findByRecipeId(recipeId);
-    }
-
-    @Override
     public void addComment(Long recipeId, String content) {
         Recipe recipe = recipeRepository.findById(recipeId)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));

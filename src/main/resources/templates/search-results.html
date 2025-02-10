@@ -14,11 +14,11 @@
 
         <div class="row">
             <div th:if="${not recipes.isEmpty()}">
-                <div>
                 <div class="col-md-4 container" th:each="recipe : ${recipes}">
                     <a th:href="@{/recipes/{id}(id=${recipe.id})}" class="text-decoration-none">
                         <div class="card mb-4">
-                            <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top" alt="Recipe Image">
+                            <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top"
+                                 alt="Recipe Image">
                             <div class="card-body">
                                 <h5 class="recipe-title text-center">
                                     <span th:text="${recipe.name}"></span>
