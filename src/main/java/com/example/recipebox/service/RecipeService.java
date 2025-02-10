@@ -23,5 +23,6 @@ public interface RecipeService {
     boolean updateRecipe(Long id, AddRecipeDTO updatedRecipe, MultipartFile file) throws IOException;
     List<Comments> getCommentsByRecipeId(Long recipeId);
     void addComment(Long recipeId, String content);
+    List<Recipe> searchRecipes(String query);
 
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head::head}">
+<body>
+
+<h1 class="title">Search Results</h1>
+<a href="/" class="btn-back">Back to Home</a>
+<main class="container flex-grow-1">
+    <div class="container">
+
+        <div th:if="${recipes.isEmpty()}" class="no-results">
+            <p class="no-results">No recipes found for your search.</p>
+        </div>
+
+        <div class="row">
+            <div th:if="${not recipes.isEmpty()}">
+                <div>
+                <div class="col-md-4 container" th:each="recipe : ${recipes}">
+                    <a th:href="@{/recipes/{id}(id=${recipe.id})}" class="text-decoration-none">
+                        <div class="card mb-4">
+                            <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top" alt="Recipe Image">
+                            <div class="card-body">
+                                <h5 class="recipe-title text-center">
+                                    <span th:text="${recipe.name}"></span>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

@@ -468,3 +468,14 @@ body {
     background: #eef7ee;
     transition: background 0.3s ease;
 }
+
+.no-results {
+    background-color: #eef7ee;
+    color: red;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 16px;
+    width: 50%;
+}

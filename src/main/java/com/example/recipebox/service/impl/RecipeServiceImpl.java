@@ -220,4 +220,8 @@ public class RecipeServiceImpl implements RecipeService {
 
         commentRepository.save(comment);
     }
+
+    public List<Recipe> searchRecipes(String query) {
+        return recipeRepository.findByNameContainingIgnoreCase(query);
+    }
 }

@@ -97,4 +97,13 @@ public class RecipeController {
         recipeService.addComment(id, content);
         return "redirect:/recipe-details/" + id;
     }
+
+    @GetMapping("/search")
+    public String searchRecipes(@RequestParam("query") String query, Model model) {
+        List<Recipe> searchResults = recipeService.searchRecipes(query);
+        System.out.println("Found recipes: " + searchResults.size()); // Отпечатва броя на намерените рецепти
+        model.addAttribute("recipes", searchResults);
+        return "search-results";
+    }
+
 }
