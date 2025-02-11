@@ -24,7 +24,7 @@ public class RecipeBoxUserDetailsServiceImpl implements RecipeBoxUserDetailsServ
                 .findByUsername(username)
                 .map(this::mapToDetails)
                 .orElseThrow(
-                        () -> new UsernameNotFoundException("User with email " + username + " not found!"));
+                        () -> new UsernameNotFoundException("User with username " + username + " not found!"));
     }
 
     private UserDetails mapToDetails(User user) {

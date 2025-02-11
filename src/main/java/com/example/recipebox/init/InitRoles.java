@@ -29,9 +29,9 @@ public class InitRoles implements CommandLineRunner {
         Role admin = new Role();
         admin.setRoleType(RoleType.ADMIN);
         roleRepository.saveAndFlush(admin);
-        Role lawyer = new Role();
-        lawyer.setRoleType(RoleType.USER);
-        roleRepository.saveAndFlush(lawyer);
+        Role user = new Role();
+        user.setRoleType(RoleType.USER);
+        roleRepository.saveAndFlush(user);
 
 
     }

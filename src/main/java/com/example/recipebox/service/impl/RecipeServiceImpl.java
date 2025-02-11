@@ -4,6 +4,7 @@ import com.example.recipebox.model.dto.AddRecipeDTO;
 import com.example.recipebox.model.entity.Comments;
 import com.example.recipebox.model.entity.Recipe;
 import com.example.recipebox.model.entity.User;
+import com.example.recipebox.model.enums.RoleType;
 import com.example.recipebox.repository.CommentRepository;
 import com.example.recipebox.repository.RecipeRepository;
 import com.example.recipebox.repository.UserRepository;
@@ -101,9 +102,6 @@ public class RecipeServiceImpl implements RecipeService {
 
         User currentUser = loggedUserService.getUser();
 
-        if (!recipe.getAuthor().equals(currentUser)) {
-            throw new SecurityException("You are not the author of this recipe!");
-        }
 
         commentRepository.deleteByRecipe(recipe);
 
@@ -176,9 +174,6 @@ public class RecipeServiceImpl implements RecipeService {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));
 
-        if (!recipe.getAuthor().equals(loggedUserService.getUser())) {
-            throw new SecurityException("You are not the author of this recipe!");
-        }
 
         recipe.setName(updatedRecipe.getName());
         recipe.setIngredients(updatedRecipe.getIngredients());
