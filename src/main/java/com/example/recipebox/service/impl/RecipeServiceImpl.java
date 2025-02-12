@@ -4,7 +4,6 @@ import com.example.recipebox.model.dto.AddRecipeDTO;
 import com.example.recipebox.model.entity.Comments;
 import com.example.recipebox.model.entity.Recipe;
 import com.example.recipebox.model.entity.User;
-import com.example.recipebox.model.enums.RoleType;
 import com.example.recipebox.repository.CommentRepository;
 import com.example.recipebox.repository.RecipeRepository;
 import com.example.recipebox.repository.UserRepository;
@@ -51,7 +50,6 @@ public class RecipeServiceImpl implements RecipeService {
             return false;
         }
 
-
         String originalFilename = file.getOriginalFilename();
         String extension = "";
         if (originalFilename.contains(".")) {
@@ -61,7 +59,6 @@ public class RecipeServiceImpl implements RecipeService {
         }
 
         String uniqueFilename = UUID.randomUUID().toString() + extension;
-
 
         Path uploadDirectory = Paths.get("src", "main", "resources", "uploads").normalize();
         if (!Files.exists(uploadDirectory)) {

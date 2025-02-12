@@ -17,6 +17,16 @@
     </div>
 
 
+    <div class="language-selector">
+        <form th:method="get" >
+            <label class="text-white mb-2"  for="lang" th:text="#{nav_bar_language}">Language</label>
+        <select id="lang" name="lang" class="custom-select small-select" onchange="this.form.submit()">
+            <option value="en_US" th:selected="${#locale.toString()} == 'en_US'">English</option>
+            <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">Български</option>
+        </select>
+        </form>
+    </div>
+
 
     <div>
         <nav class="navbar navbar-expand-lg ">

@@ -479,3 +479,19 @@ body {
     border-radius: 16px;
     width: 50%;
 }
+
+.language-selector {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.small-select {
+    text-align: center;
+    font-size: 14px;
+    padding: 3px 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: white;
+}
