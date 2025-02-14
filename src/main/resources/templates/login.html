@@ -4,7 +4,7 @@
 
 <body>
 <main>
-  <h1 class="text-center mt-3"><span class="badge my-title">Login</span></h1>
+  <h1 class="text-center mt-3"><span class="badge my-title" th:text="#{login}">Login</span></h1>
   <div class="d-flex justify-content-center">
 
 
@@ -16,9 +16,9 @@
               class="mx-auto w-25 bg-blur rounded">
 
         <div>
-          <div class=" bg-danger rounded"  th:if="${showError}">Incorrect username or password!</div>
+          <div class=" bg-danger rounded"  th:if="${showError}" th:text="#{incorrect_username_or_password}">Incorrect username or password!</div>
           <div class="col-auto">
-            <label for="inputUsername" class="h4 mb-2">Username</label>
+            <label for="inputUsername" class="h4 mb-2" th:text="#{username}">Username</label>
           </div>
           <div class="form-group mb-3">
             <input
@@ -36,7 +36,7 @@
         </div>
         <div class="form-group mb-3">
           <div class="col-auto">
-            <label for="inputPassword" class="h4 mb-2">Password</label>
+            <label for="inputPassword" class="h4 mb-2" th:text="#{password}">Password</label>
           </div>
           <div class="col-auto">
             <input
@@ -53,7 +53,7 @@
         </div>
         <br>
         <div class="button-holder d-flex justify-content-center">
-          <button type="submit" class="btn btn-success mb-3 text-white-50" value="Login">Login</button>
+          <button type="submit" class="btn btn-success mb-3 text-white-50" value="Login" th:text="#{login}">Login</button>
         </div>
       </form>
     </div>

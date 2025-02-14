@@ -8,7 +8,7 @@
 <body>
 <main>
 
-    <h1 class="text-center mt-3"><span class="badge my-title">Register</span></h1>
+    <h1 class="text-center mt-3"><span class="badge my-title" th:text="#{register}">Register</span></h1>
 
 
     <form
@@ -18,15 +18,15 @@
             class="mx-auto w-25 bg-blur rounded">
 
         <div class="form-group mb-3">
-            <div class=" bg-danger rounded" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
-            >Username length must be between 5 and 30 characters
-            </div>
+
             <div class="label-holder textCol text-white d-flex justify-content-center">
-                <label for="username" class="h4 mb-2 text-white">Username</label>
+                <label for="username" class="h4 mb-2 text-white" th:text="#{username}">Username</label>
             </div>
 
 
             <input
+                    th:field="*{username}"
+                    th:errorclass="bg-danger"
                     type="text"
                     class="form-control"
                     id="username"
@@ -34,12 +34,15 @@
 
             />
             <small class="invalid-feedback text-danger"></small>
-            <div class=" bg-danger rounded" th:if="${hasRegisterError}">Username is already occupied</div>
+            <div class=" bg-danger rounded" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+            >Username length must be between 5 and 30 characters
+            </div>
+            <div class=" bg-danger rounded" th:if="${hasRegisterError}" th:text="#{occupied_username}">Username is already occupied!</div>
         </div>
 
         <div class="form-group mb-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="email" class="h4 mb-2">Email</label>
+                <label for="email" class="h4 mb-2" th:text="#{email}">Email</label>
             </div>
             <input th:field="*{email}"
                    th:errorclass="bg-danger"
@@ -57,10 +60,10 @@
 
         <div class="form-group mb-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="password" class="h4 mb-2">Password</label>
+                <label for="password" class="h4 mb-2" th:text="#{password}">Password</label>
             </div>
             <div id="passwordError"
-                 class=" bg-danger rounded" th:if="${missMatchPassword}">Password and confirmPassword must be equal!</div>
+                 class=" bg-danger rounded" th:if="${missMatchPassword}" th:text="#{password_confirm_password}">Password and confirm password must be equal!</div>
             <input th:field="*{password}"
                    th:errorclass="bg-danger"
                     type="password"
@@ -77,7 +80,7 @@
 
         <div class="form-group mb-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="confirmPassword" class="h4 mb-2">Confirm Password</label>
+                <label for="confirmPassword" class="h4 mb-2" th:text="#{confirm_password}">Confirm Password</label>
             </div>
             <input th:field="*{confirmPassword}"
                    th:errorclass="bg-danger"
@@ -94,7 +97,7 @@
         </div>
         <br>
         <div class="button-holder d-flex justify-content-center">
-            <button type="submit" class="btn btn-success mb-3 text-white-50" value="Register">Register</button>
+            <button type="submit" class="btn btn-success mb-3 text-white-50" value="Register" th:text="#{register}">Register</button>
         </div>
 
     </form>

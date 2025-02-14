@@ -48,10 +48,10 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item" sec:authorize="isAnonymous()">
-                            <a class="nav-link a-col" aria-current="page" th:href="@{users/login}" th:text="#{nav_bar_login}">Login</a>
+                            <a class="nav-link a-col" aria-current="page" th:href="@{users/login}" th:text="#{login}">Login</a>
                         </li>
                         <li class="nav-item" sec:authorize="isAnonymous()">
-                            <a class="nav-link a-col" th:href="@{users/register}" th:text="#{nav_bar_register}">Register</a>
+                            <a class="nav-link a-col" th:href="@{users/register}" th:text="#{register}">Register</a>
                         </li>
                         <li class="nav-item" sec:authorize="isAuthenticated()">
                             <form th:method="POST"
