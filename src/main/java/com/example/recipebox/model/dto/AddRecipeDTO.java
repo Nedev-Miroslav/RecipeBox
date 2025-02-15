@@ -2,18 +2,20 @@ package com.example.recipebox.model.dto;
 
 import com.example.recipebox.model.enums.CategoryType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class AddRecipeDTO {
 
-    @NotBlank(message = "Please enter recipe name!")
+    @NotBlank(message = "{message.name}")
     private String name;
 
-    @NotBlank(message = "Please enter ingredients!")
+    @NotBlank(message = "{message.ingredients}")
     private String ingredients;
 
-    @NotBlank(message = "Please enter instructions!")
+    @NotBlank(message = "{message.instructions}")
     private String instructions;
 
+    @NotNull(message = "{message.category}")
     private CategoryType categoryType;
 
     public AddRecipeDTO() {

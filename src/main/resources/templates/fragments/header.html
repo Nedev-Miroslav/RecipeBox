@@ -8,9 +8,9 @@
             <div class="row justify-content-lg-start d-flex align-items-center">
                 <p class="text-left text-white bold mb-0" th:text="#{nav_bar_greetings}">Welcome to RecipeBox, </p>
                 <span class="bold left-space">
-                <p class="mb-0 username_name">
+                <span class="mb-0 username_name">
                     <th:block sec:authentication="name"></th:block>
-                </p>
+                </span>
             </span>
             </div>
         </div>

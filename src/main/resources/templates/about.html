@@ -6,26 +6,26 @@
 <header th:replace="~{fragments/header::header}"></header>
 <div class="container about-container">
     <div class="about-title">
-        <h1 class="text-center text-white">Welcome to RecipeBox!</h1>
-        <p class="text-center text-white">Your go-to digital space for culinary inspiration.</p>
+        <h1 class="text-center text-white" th:text="#{about_welcome}">Welcome to RecipeBox</h1>
+        <p class="text-center text-white" th:text="#{about_go_to_digital}">Your go-to digital space for culinary inspiration</p>
     </div>
     <div class="row">
         <div class="col-md-4 about-card">
             <img src="/images/recipe1.jpg" class="about-img" alt="Cooking">
-            <p class="about-text">🔪 Discover new recipes and enhance your cooking skills.</p>
+            <p class="about-text" th:text="#{about_discover}">🔪 Discover new recipes and enhance your cooking skills.</p>
         </div>
         <div class="col-md-4 about-card">
             <img src="/images/recipe2.jpg" class="about-img" alt="Ingredients">
-            <p class="about-text">🥕 Organize your favorite ingredients and dishes in one place.</p>
+            <p class="about-text"th:text="#{about_organize}">🥕 Organize your favorite ingredients and dishes in one place.</p>
         </div>
         <div class="col-md-4 about-card">
             <img src="/images/recipe3.jpg" class="about-img" alt="Sharing">
-            <p class="about-text">📖 Share delicious recipes with your friends and family!</p>
+            <p class="about-text" th:text="#{about_share}">📖 Share delicious recipes with your friends and family!</p>
         </div>
     </div>
 
     <div class="text-center mt-4">
-        <a th:href="@{recipe-list}" class="btn btn-success btn-lg about-btn text-white-50">Explore Recipes</a>
+        <a th:href="@{recipe-list}" th:text="#{about_btn}" class="btn btn-success btn-lg about-btn text-white-50">Explore Recipes</a>
     </div>
 </div>
 <footer th:replace="~{fragments/footer::footer}"></footer>

@@ -8,7 +8,7 @@
 
 <header th:replace="~{fragments/header::header}"></header>
 
-<h1 class="title">All Recipes</h1>
+<h1 class="title" th:text="#{all_recipes}">All Recipes</h1>
 <main class="container flex-grow-1">
 <div class="container">
     <div class="row">
@@ -23,11 +23,11 @@
 
                         <div th:if="${#authentication.name == recipe.author.username or #authorization.expression('hasRole(''ADMIN'')')}" class="btn-container">
                             <a th:href="@{/recipe-edit/{id}(id=${recipe.id})}" class="btn-edit">
-                                ✏️ Edit
+                                ✏️ <span th:text="#{edit}">Edit</span>
                             </a>
 
                             <form th:method="delete" th:action="@{/recipes/{id}(id=${recipe.id})}">
-                                <button class="btn-delete"><i>🗑️</i> Delete</button>
+                                <button class="btn-delete"><i>🗑️</i><span th:text="#{delete}">Delete</span></button>
                             </form>
                         </div>
 

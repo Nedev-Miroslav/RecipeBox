@@ -10,10 +10,10 @@
 <main class="container flex-grow-1">
 
     <div class="container mt-5 text-center">
-        <h2 class="fw-bold text-white">Find Your Next Favorite Recipe</h2>
+        <h2 class="fw-bold text-white" th:text="#{find_recipe}">Find Your Next Favorite Recipe</h2>
         <form th:action="@{/search}" method="get" class="d-flex justify-content-center">
             <input type="text" name="query" class="form-control w-50 me-2" placeholder="Search recipes...">
-            <button type="submit" class="btn btn-success">Search</button>
+            <button type="submit" class="btn btn-success" th:text="#{search}">Search</button>
         </form>
     </div>
 
@@ -21,9 +21,9 @@
 
         <div class="row align-items-center mb-5 bg-white shadow rounded p-4 section-box">
             <div class="col-md-6">
-                <h2 class="fw-bold text-success">Discover delicious recipes</h2>
-                <p>Browse thousands of recipes shared by culinary enthusiasts and professional chefs.</p>
-                <a class="btn btn-success btn-lg" th:href="@{recipe-list}">View recipes</a>
+                <h2 class="fw-bold text-success" th:text="#{discover_recipe}">Discover delicious recipes</h2>
+                <p th:text="#{browse_thousands_of_recipes}">Browse thousands of recipes shared by culinary enthusiasts and professional chefs.</p>
+                <a class="btn btn-success btn-lg" th:href="@{recipe-list}" th:text="#{view_recipes}">View recipes</a>
             </div>
             <div class="col-md-6">
                 <img src="/images/food.jpg" class="img-fluid rounded shadow" alt="Delicious food">
@@ -33,9 +33,9 @@
 
         <div class="row align-items-center bg-white shadow rounded p-4 section-box">
             <div class="col-md-6 order-md-2">
-                <h2 class="fw-bold text-primary">Learn more about us</h2>
-                <p>Find out more about our mission and passion for delicious food.</p>
-                <a class="btn btn-primary btn-lg" th:href="@{about}">Learn more</a>
+                <h2 class="fw-bold text-primary" th:text="#{learn_more_about_us}">Learn more about us</h2>
+                <p th:text="#{find_out_more_about}">Find out more about our mission and passion for delicious food.</p>
+                <a class="btn btn-primary btn-lg" th:href="@{about}" th:text="#{learn_more}">Learn more</a>
             </div>
             <div class="col-md-6 order-md-1">
                 <img src="/images/about.jpg" class="img-fluid rounded shadow" alt="About us">

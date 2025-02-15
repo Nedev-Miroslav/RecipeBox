@@ -2,9 +2,9 @@
 <head th:replace="~{fragments/head::head}"></head>
 <body>
 
-<h1 class="title">My Favorite Recipes</h1>
+<h1 class="title" th:text="#{favorites_title}">My Favorite Recipes</h1>
 
-<a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
+<a th:href="@{/recipe-list}" class="btn-back" th:text="#{back_btn}">⬅ Back to All Recipes</a>
 
 <div class="container">
   <div class="row">

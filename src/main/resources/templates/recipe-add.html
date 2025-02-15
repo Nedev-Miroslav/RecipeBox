@@ -7,7 +7,7 @@
 <header th:replace="~{fragments/header::header}"></header>
 <main>
 
-    <h1 class="text-center mt-3"><span class="badge my-title">Add Recipe</span></h1>
+    <h1 class="text-center mt-3"><span class="badge my-title" th:text="#{add_recipe}">Add Recipe</span></h1>
 
 
     <form
@@ -19,7 +19,7 @@
     >
         <div class="form-group mb-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="name" class="h4 mb-2 text-white">Name</label>
+                <label for="name" class="h4 mb-2 text-white" th:text="#{name}">Name</label>
             </div>
             <input
                     type="text"
@@ -33,7 +33,7 @@
 
         <div class="form-group m-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="ingredients" class="h4 mb-2">Ingredients</label>
+                <label for="ingredients" class="h4 mb-2" th:text="#{ingredients}">Ingredients</label>
             </div>
             <textarea
                     type="text"
@@ -41,14 +41,14 @@
                     id="ingredients"
                     name="ingredients"
                     th:field="*{ingredients}">
-            <div class="text-danger" th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}" ></div>
             </textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}" ></div>
 
         </div>
 
         <div class="form-group m-3">
             <div class="label-holder text-white textCol d-flex justify-content-center">
-                <label for="instructions" class="h4 mb-2">Instructions</label>
+                <label for="instructions" class="h4 mb-2" th:text="#{instructions}">Instructions</label>
             </div>
             <textarea
                     type="text"
@@ -56,15 +56,15 @@
                     id="instructions"
                     name="instructions"
                     th:field="*{instructions}">
-            <div class="text-danger" th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}" ></div>
             </textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('instructions')}" th:errors="*{instructions}" ></div>
 
         </div>
 
 
         <div class="form-group m-3">
             <div class="text-white label-holder d-flex justify-content-center">
-                <label for="category" class="h4 mb-2">Category</label>
+                <label for="category" class="h4 mb-2" th:text="#{category}">Category</label>
             </div>
             <select
                     class="custom-select"
@@ -73,30 +73,32 @@
                     th:field="*{categoryType}"
 
             >
-                <option value="" >Select category</option>
+                <option value="" th:text="#{select_category}">Select category</option>
                 <option th:each="categoryType: ${categoryTypes}" th:value="${categoryType}" th:text="${categoryType}">Category type</option>
             </select>
 
-            <small class="invalid-feedback text-danger">Category error message</small>
+            <div class="text-danger" th:if="${#fields.hasErrors('categoryType')}" th:errors="*{categoryType}" ></div>
 
         </div>
 
         <div class="form-group m-3">
             <div class="text-white label-holder d-flex justify-content-center">
-                <label for="picture" class="h4 mb-2">Attach the picture</label>
+                <label for="picture" class="h4 mb-2" th:text="#{attach_picture}">Attach the picture</label>
             </div>
         </div>
 
         <div class="form-group m-3 custom-file-upload">
             <input type="file" name="imageUrl" id="picture">
-            <label for="picture">📷 Upload Image</label>
+            <label for="picture" th:text="#{upload_picture}">📷 Upload Image</label>
             <div id="file-name" class="text-white-50"></div>
-            <div class="text-danger" th:if="${recipeError}">Please upload a valid picture!</div>
+            <div class="text-danger" th:if="${recipeError}">
+                <span th:text="#{valid_picture}">Please upload a valid picture!</span>
+            </div>
         </div>
 
 
         <div class="button-holder d-flex justify-content-center">
-            <button type="submit" class="btn btn-success  mb-3 text-white-50" value="Add recipe">Add recipe</button>
+            <button type="submit" class="btn btn-success  mb-3 text-white-50" value="Add recipe" th:text="#{add_recipe}">Add Recipe</button>
         </div>
 
 
