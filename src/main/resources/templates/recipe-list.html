@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" th:each="recipe : ${recipes}">
-            <a th:href="@{/recipes/{id}(id=${recipe.id})}" class="text-decoration-none">
+            <a th:href="@{/recipe-details/{id}(id=${recipe.id})}" class="text-decoration-none">
                 <div class="card mb-4">
                     <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top" alt="Recipe Image">
                     <div class="card-body">
