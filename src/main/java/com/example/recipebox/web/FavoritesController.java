@@ -2,8 +2,6 @@ package com.example.recipebox.web;
 
 import com.example.recipebox.model.entity.Recipe;
 import com.example.recipebox.service.FavoritesService;
-import com.example.recipebox.service.LoggedUserService;
-import com.example.recipebox.service.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +15,9 @@ import java.util.List;
 public class FavoritesController {
 
     private final FavoritesService favoritesService;
-    private final LoggedUserService loggedUserService;
-    private final RecipeService recipeService;
 
-    public FavoritesController(FavoritesService favoritesService, LoggedUserService loggedUserService, RecipeService recipeService) {
+    public FavoritesController(FavoritesService favoritesService) {
         this.favoritesService = favoritesService;
-        this.loggedUserService = loggedUserService;
-        this.recipeService = recipeService;
     }
 
     @PostMapping("/toggle/{id}")

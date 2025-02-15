@@ -211,4 +211,15 @@ public class RecipeServiceImpl implements RecipeService {
     public List<Recipe> searchRecipes(String query) {
         return recipeRepository.findByNameContainingIgnoreCase(query);
     }
+
+    @Override
+    public boolean favorite(Recipe recipe) {
+        User user = loggedUserService.getUser();
+        for (Recipe favorite : user.getFavorites()) {
+            if (favorite.getId() == recipe.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

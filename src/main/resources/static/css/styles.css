@@ -485,11 +485,3 @@ body {
     justify-items: right;
     margin-bottom: 1.6em;
 }
-
-.small-select {
-    text-align: center;
-    font-size: 14px;
-    padding: 1px 3px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
