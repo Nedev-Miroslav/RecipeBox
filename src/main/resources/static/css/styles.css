@@ -16,7 +16,11 @@ body {
     line-height: 1.4;
 }
 
-.firstCont{
+.firstContainer {
+    width: 100%;
+}
+
+.firstCont {
     display: grid;
     grid-gap: 10px;
     padding: 0;
@@ -24,7 +28,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.username_name{
+.username_name {
     color: darkgreen;
     font-weight: bold;
     padding-top: 6px;
@@ -59,7 +63,7 @@ body {
     text-align: center;
 }
 
-.my-title{
+.my-title {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -71,20 +75,20 @@ body {
     text-align: center;
 }
 
-.custom-select{
-    display:inline-block;
-    width:100%;
-    height:calc(2.25rem + 2px);
-    padding:.375rem 1.75rem .375rem .75rem;
-    line-height:1.5;
-    color:#495057;
-    vertical-align:middle;
-    background:#fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
-    background-size:8px 10px;
-    border:1px solid #ced4da;
-    border-radius:.25rem;
-    -webkit-appearance:none;
-    -moz-appearance:none;
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+    background-size: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .section-box {
@@ -145,7 +149,7 @@ body {
     outline-offset: 2px;
 }
 
-.about-title{
+.about-title {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
@@ -226,7 +230,7 @@ body {
     object-fit: cover;
 }
 
-.title{
+.title {
     color: white;
     font-weight: bold;
     padding: 16px;
@@ -369,7 +373,6 @@ body {
     max-width: 300px;
 }
 
-
 .comment-section {
     margin-top: 30px;
     padding: 20px;
@@ -401,7 +404,6 @@ body {
     background: #fff;
 }
 
-
 .btn-comment {
     margin-top: 10px;
     padding: 10px 15px;
@@ -418,7 +420,6 @@ body {
     background-color: #388E3C;
 }
 
-/* Секция за коментари */
 .comments-section {
     margin-top: 40px;
     padding: 20px;
@@ -481,17 +482,14 @@ body {
 }
 
 .language-selector {
-    position: absolute;
-    top: 16px;
-    right: 40px;
-    z-index: 1000;
+    justify-items: right;
+    margin-bottom: 1.6em;
 }
 
 .small-select {
     text-align: center;
     font-size: 14px;
-    padding: 3px 5px;
+    padding: 1px 3px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    background: white;
 }
