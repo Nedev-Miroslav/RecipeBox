@@ -23,7 +23,7 @@ public class FavoritesController {
     @PostMapping("/toggle/{id}")
     public String toggleFavorite(@PathVariable Long id) {
         favoritesService.toggleFavorite(id);
-        return "redirect:/recipes/" + id;
+        return "redirect:/recipe-details/" + id;
     }
 
     @GetMapping

@@ -86,8 +86,11 @@ public class RecipeController {
         Recipe recipe = recipeService.findRecipeById(id);
         List<Comments> comments = commentService.getCommentsByRecipe(id);
 
+        boolean isFavorite = recipeService.favorite(recipe);
+
         model.addAttribute("recipe", recipe);
         model.addAttribute("comments", comments);
+        model.addAttribute("isFavorite", isFavorite);
 
         return "recipe-details";
     }
