@@ -13,9 +13,20 @@
         <div class="card mb-4">
           <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top" alt="Recipe Image">
           <div class="card-body">
-            <h5 class="card-title text-center">
+            <h5 class="recipe-title text-center">
               <span th:text="${recipe.name}"></span>
             </h5>
+
+            <div th:if="${#authentication.name == recipe.author.username or #authorization.expression('hasRole(''ADMIN'')')}" class="btn-container">
+              <a th:href="@{/recipe-edit/{id}(id=${recipe.id})}" class="btn-edit">
+                ✏️ <span th:text="#{edit}">Edit</span>
+              </a>
+
+              <form th:method="delete" th:action="@{/recipes/{id}(id=${recipe.id})}">
+                <button class="btn-delete"><i>🗑️</i><span th:text="#{delete}">Delete</span></button>
+              </form>
+            </div>
+
           </div>
         </div>
       </a>

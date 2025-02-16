@@ -22,4 +22,7 @@ public interface RecipeService {
     List<Recipe> searchRecipes(String query);
 
     boolean favorite(Recipe recipe);
+
+    List<Recipe> getMyRecipes();
+
 }

@@ -72,6 +72,13 @@ public class RecipeController {
         return "redirect:/recipe-list";
     }
 
+    @GetMapping("my-recipes")
+    public String showMyRecipes(Model model) {
+        List<Recipe> myRecipes = recipeService.getMyRecipes();
+        model.addAttribute("myRecipes", myRecipes);
+        return "my-recipes";
+    }
+
     @DeleteMapping("/recipes/{id}")
 
     public String deleteRecipe(@PathVariable("id") Long id) {

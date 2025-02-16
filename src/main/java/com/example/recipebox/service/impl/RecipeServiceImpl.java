@@ -22,6 +22,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -221,5 +222,11 @@ public class RecipeServiceImpl implements RecipeService {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<Recipe> getMyRecipes() {
+        User user = loggedUserService.getUser();
+        return recipeRepository.findAllByAuthorId(user.getId());
     }
 }
