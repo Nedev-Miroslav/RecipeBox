@@ -72,10 +72,10 @@ public class RecipeController {
         return "redirect:/recipe-list";
     }
 
-    @GetMapping("my-recipes")
+    @GetMapping("/my-recipes")
     public String showMyRecipes(Model model) {
         List<Recipe> myRecipes = recipeService.getMyRecipes();
-        model.addAttribute("myRecipes", myRecipes);
+        model.addAttribute("myRecipe", myRecipes);
         return "my-recipes";
     }
 
