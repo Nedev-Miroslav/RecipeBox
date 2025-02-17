@@ -487,3 +487,30 @@ body {
     justify-items: right;
     margin-bottom: 1.6em;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}
+
+.pagination span {
+    font-weight: bold;
+    color: #333;
+}

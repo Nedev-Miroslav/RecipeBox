@@ -12,6 +12,9 @@ import com.example.recipebox.service.RecipeService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,7 +25,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,6 +44,12 @@ public class RecipeServiceImpl implements RecipeService {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
         this.loggedUserService = loggedUserService;
+    }
+
+    @Override
+    public Page<Recipe> getPaginatedRecipes(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeRepository.findAll(pageable);
     }
 
     @Override
@@ -80,11 +88,6 @@ public class RecipeServiceImpl implements RecipeService {
 
         recipeRepository.save(toInsert);
         return true;
-    }
-
-    @Override
-    public List<Recipe> findAllRecipes() {
-        return recipeRepository.findAll();
     }
 
     @Override

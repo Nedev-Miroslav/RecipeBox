@@ -35,6 +35,17 @@
                 </div>
             </a>
         </div>
+
+        <div class="pagination">
+            <a th:if="${currentPage > 0}"
+               th:href="@{/recipe-list(page=${currentPage - 1}, size=3)}">Previous</a>
+
+            <span th:text="'Page ' + ${currentPage + 1} + ' of ' + ${totalPages}"></span>
+
+            <a th:if="${currentPage + 1 < totalPages}"
+               th:href="@{/recipe-list(page=${currentPage + 1}, size=3)}">Next</a>
+        </div>
+
     </div>
 </div>
 </main>
