@@ -8,18 +8,18 @@
 
 <div class="recipe-container">
     <h1 class="recipe-title" th:text="${recipe.name}"></h1>
-    <p class="recipe-author">By <span th:text="${recipe.author.username}"></span></p>
-    <p class="recipe-category">Category: <span th:text="${recipe.categoryType}"></span></p>
+    <p class="recipe-author"><span th:text="#{by}"></span><span>:</span> <span th:text="${recipe.author.username}"></span></p>
+    <p class="recipe-category"><span th:text="#{category}"></span><span>:</span> <span th:text="${recipe.categoryType}"></span></p>
 
     <img class="recipe-image" th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" alt="Recipe Image">
 
     <div class="recipe-section">
-        <h4>Ingredients:</h4>
+        <h4 th:text="#{ingredients}">Ingredients</h4>
         <p th:text="${recipe.ingredients}"></p>
     </div>
 
     <div class="recipe-section">
-        <h4>Instructions:</h4>
+        <h4 th:text="#{instructions}">Instructions</h4>
         <p th:text="${recipe.instructions}"></p>
     </div>
 
@@ -32,23 +32,23 @@
 
 
     <div class="text-center">
-        <a th:href="@{/recipe-list}" class="btn-back">⬅ Back to All Recipes</a>
+        <a th:href="@{/recipe-list}" class="btn-back" th:text="#{back_btn}">⬅ Back to All Recipes</a>
     </div>
 </div>
 <div class="recipe-container">
 <div class="comment-section">
-    <h3>Leave a Comment:</h3>
+    <h3 th:text="#{leave_comment}">Leave a Comment:</h3>
     <form th:action="@{/recipe-details/{id}/comment(id=${recipe.id})}" method="post">
         <input type="hidden" name="recipeId" th:value="${recipe.id}">
 
         <textarea name="content" placeholder="Write a comment..." required></textarea>
 
-        <button type="submit" class="btn-comment">Add Comment</button>
+        <button type="submit" class="btn-comment" th:text="#{add_comment}">Add Comment</button>
     </form>
 </div>
 
 <div class="comments-section">
-    <h3>Comments</h3>
+    <h3 th:text="#{comments}">Comments</h3>
     <ul class="comment-box">
         <li th:each="comment : ${comments}">
             <strong th:text="${comment.user.username}"></strong>
