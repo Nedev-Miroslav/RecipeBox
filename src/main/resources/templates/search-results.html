@@ -4,7 +4,7 @@
 <body>
 
 <h1 class="title">Search Results</h1>
-<a href="/" class="btn-back">Back to Home</a>
+<a th:href="@{index}" class="btn-back">Back to Home</a>
 <main class="container flex-grow-1">
     <div class="container">
 
@@ -12,9 +12,9 @@
             <p class="no-results">No recipes found for your search.</p>
         </div>
 
-        <div class="row">
-            <div th:if="${not recipes.isEmpty()}">
-                <div class="col-md-4 container" th:each="recipe : ${recipes}">
+        <div th:if="${not recipes.isEmpty()}">
+            <div class="row">
+                <div class="col-md-4" th:each="recipe : ${recipes}">
                     <a th:href="@{/recipes/{id}(id=${recipe.id})}" class="text-decoration-none">
                         <div class="card mb-4">
                             <img th:src="@{/uploads/{imageName}(imageName=${recipe.imageUrl})}" class="card-img-top"
@@ -23,6 +23,18 @@
                                 <h5 class="recipe-title text-center">
                                     <span th:text="${recipe.name}"></span>
                                 </h5>
+
+                                <div th:if="${#authentication.name == recipe.author.username or #authorization.expression('hasRole(''ADMIN'')')}"
+                                     class="btn-container">
+                                    <a th:href="@{/recipe-edit/{id}(id=${recipe.id})}" class="btn-edit">
+                                        ✏️ <span th:text="#{edit}">Edit</span>
+                                    </a>
+
+                                    <form th:method="delete" th:action="@{/recipes/{id}(id=${recipe.id})}">
+                                        <button class="btn-delete"><i>🗑️</i><span th:text="#{delete}">Delete</span>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </a>
