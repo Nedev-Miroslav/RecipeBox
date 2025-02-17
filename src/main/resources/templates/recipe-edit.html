@@ -6,7 +6,7 @@
 <body>
 <header></header>
 <main >
-    <h1 class="text-center mt-3"><span class="badge my-title">Edit Recipe</span></h1>
+    <h1 class="text-center mt-3"><span class="badge my-title" th:text="#{edit_recipe}">Edit Recipe</span></h1>
 
     <form
             class="mx-auto w-25 bg-blur rounded"
@@ -16,24 +16,24 @@
             enctype="multipart/form-data">
 
         <div class="form-group mb-3">
-            <label for="name" class="h4 mb-2">Name</label>
+            <label for="name" class="h4 mb-2" th:text="#{name}">Name</label>
             <input type="text" class="form-control" id="name" name="name" th:field="*{name}">
             <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
         </div>
 
         <div class="form-group mb-3">
-            <label for="ingredients" class="h4 mb-2">Ingredients</label>
+            <label for="ingredients" class="h4 mb-2" th:text="#{ingredients}">Ingredients</label>
             <textarea class="form-control" id="ingredients" name="ingredients" th:field="*{ingredients}"></textarea>
         </div>
 
         <div class="form-group mb-3">
-            <label for="instructions" class="h4 mb-2">Instructions</label>
+            <label for="instructions" class="h4 mb-2" th:text="#{instructions}">Instructions</label>
             <textarea class="form-control" id="instructions" name="instructions" th:field="*{instructions}"></textarea>
         </div>
 
         <div class="form-group m-3">
             <div class="text-white label-holder d-flex justify-content-center">
-                <label for="category" class="h4 mb-2">Category</label>
+                <label for="category" class="h4 mb-2" th:text="#{category}">Category</label>
             </div>
             <select
                     class="custom-select" id="category" name="category"
@@ -48,17 +48,17 @@
 
         <div class="form-group m-3">
             <div class="text-white label-holder d-flex justify-content-center">
-                <label for="picture" class="h4 mb-2">Attach the picture</label>
+                <label for="picture" class="h4 mb-2" th:text="#{attach_picture}">Attach the picture</label>
             </div>
         </div>
         <div class="form-group m-3 custom-file-upload">
             <input type="file" name="imageUrl" id="picture">
-            <label for="picture">📷 Upload Image</label>
+            <label for="picture" th:text="#{upload_picture}">📷 Upload Image</label>
             <div id="file-name" class="text-white-50"></div>
         </div>
 
         <div class="button-holder d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Update Recipe</button>
+            <button type="submit" class="btn btn-primary" th:text="#{update_recipe}">Update Recipe</button>
         </div>
 
     </form>
