@@ -38,12 +38,14 @@
 
         <div class="pagination">
             <a th:if="${currentPage > 0}"
-               th:href="@{/recipe-list(page=${currentPage - 1}, size=3)}">Previous</a>
+               th:href="@{/recipe-list(page=${currentPage - 1}, size=3)}"
+               th:text="#{previous}">Previous</a>
 
             <span th:text="'Page ' + ${currentPage + 1} + ' of ' + ${totalPages}"></span>
 
             <a th:if="${currentPage + 1 < totalPages}"
-               th:href="@{/recipe-list(page=${currentPage + 1}, size=3)}">Next</a>
+               th:href="@{/recipe-list(page=${currentPage + 1}, size=3)}"
+               th:text="#{next}">Next</a>
         </div>
 
     </div>
