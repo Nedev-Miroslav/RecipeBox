@@ -228,8 +228,9 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> getMyRecipes() {
+    public Page<Recipe> getMyRecipes(int page, int size) {
         User user = loggedUserService.getUser();
-        return recipeRepository.findAllByAuthorId(user.getId());
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeRepository.findAllByAuthorId(pageable, user.getId());
     }
 }

@@ -25,6 +25,6 @@ public interface RecipeService {
 
     boolean favorite(Recipe recipe);
 
-    List<Recipe> getMyRecipes();
+    Page<Recipe> getMyRecipes(int page, int size);
 
 }

@@ -14,7 +14,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     List<Recipe> findByNameContainingIgnoreCase(String name);
 
-    List<Recipe> findAllByAuthorId(long id);
+    Page<Recipe> findAllByAuthorId(@NonNull Pageable pageable, long id);
 
     Page<Recipe> findAll(@NonNull Pageable pageable);
 }

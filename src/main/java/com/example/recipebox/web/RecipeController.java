@@ -7,6 +7,7 @@ import com.example.recipebox.model.enums.CategoryType;
 import com.example.recipebox.service.CommentService;
 import com.example.recipebox.service.RecipeService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -73,9 +74,16 @@ public class RecipeController {
     }
 
     @GetMapping("/my-recipes")
-    public String showMyRecipes(Model model) {
-        List<Recipe> myRecipes = recipeService.getMyRecipes();
-        model.addAttribute("myRecipe", myRecipes);
+    public String showMyRecipes(Model model,
+                                @RequestParam(defaultValue = "0") int page,
+                                @RequestParam(defaultValue = "3") int size) {
+        Page<Recipe> myRecipes = recipeService.getMyRecipes(page, size);
+
+        model.addAttribute("myRecipe", myRecipes.getContent());
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", myRecipes.getTotalPages());
+
+
         return "my-recipes";
     }
 
