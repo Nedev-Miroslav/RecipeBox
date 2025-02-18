@@ -212,8 +212,10 @@ public class RecipeServiceImpl implements RecipeService {
         commentRepository.save(comment);
     }
 
-    public List<Recipe> searchRecipes(String query) {
-        return recipeRepository.findByNameContainingIgnoreCase(query);
+    @Override
+    public Page<Recipe> searchRecipes(int page, int size, String query) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeRepository.findByNameContainingIgnoreCase(pageable, query);
     }
 
     @Override

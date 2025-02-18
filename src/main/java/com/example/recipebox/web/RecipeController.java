@@ -117,9 +117,15 @@ public class RecipeController {
     }
 
     @GetMapping("/search")
-    public String searchRecipes(@RequestParam("query") String query, Model model) {
-        List<Recipe> searchResults = recipeService.searchRecipes(query);
-        model.addAttribute("recipes", searchResults);
+    public String searchRecipes(@RequestParam String query, Model model,
+                                @RequestParam(defaultValue = "0") int page,
+                                @RequestParam(defaultValue = "3") int size) {
+        Page<Recipe> searchResults = recipeService.searchRecipes(page, size, query);
+
+        model.addAttribute("recipes", searchResults.getContent());
+        model.addAttribute("query", query);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", searchResults.getTotalPages());
         return "search-results";
     }
 

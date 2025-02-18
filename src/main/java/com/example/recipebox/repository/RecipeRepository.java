@@ -12,9 +12,9 @@ import java.util.List;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    List<Recipe> findByNameContainingIgnoreCase(String name);
+    Page<Recipe> findByNameContainingIgnoreCase(Pageable pageable, String name);
 
-    Page<Recipe> findAllByAuthorId(@NonNull Pageable pageable, long id);
+    Page<Recipe> findAllByAuthorId(Pageable pageable, long id);
 
     Page<Recipe> findAll(@NonNull Pageable pageable);
 }

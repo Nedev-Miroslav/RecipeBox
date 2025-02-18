@@ -21,7 +21,7 @@ public interface RecipeService {
     AddRecipeDTO getRecipeDTOById(Long id);
     boolean updateRecipe(Long id, AddRecipeDTO updatedRecipe, MultipartFile file) throws IOException;
     void addComment(Long recipeId, String content);
-    List<Recipe> searchRecipes(String query);
+    Page<Recipe> searchRecipes(int page, int size, String query);
 
     boolean favorite(Recipe recipe);
 
