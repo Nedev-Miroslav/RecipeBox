@@ -38,6 +38,7 @@ public class FavoritesServiceImpl implements FavoritesService{
         userRepository.save(user);
     }
 
+    @Override
     public List<Recipe> getFavoriteRecipes() {
         return loggedUserService.getUser().getFavorites();
     }

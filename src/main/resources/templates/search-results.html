@@ -3,13 +3,13 @@
 <head th:replace="~{fragments/head::head}">
 <body>
 
-<h1 class="title">Search Results</h1>
-<a th:href="@{index}" class="btn-back">Back to Home</a>
+<h1 class="title" th:text="#{search_page_title}">Search Results</h1>
+<a th:href="@{index}" class="btn-back" th:text="#{back_btn}">Back to Home</a>
 <main class="container flex-grow-1">
     <div class="container">
 
         <div th:if="${recipes.isEmpty()}" class="no-results">
-            <p class="no-results">No recipes found for your search.</p>
+            <p class="no-results" th:text="#{no_recipe_found}">No recipes found for your search!</p>
         </div>
 
         <div th:if="${not recipes.isEmpty()}">
