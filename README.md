@@ -24,3 +24,9 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ![JavaScript](https://img.shields.io/badge/JavaScript-f0db4f?style=flat&logo=javascript&logoColor=black) 
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-6db33f?style=flat&logo=spring&logoColor=white) 
 ![Spring Security](https://img.shields.io/badge/Spring%20Security-6db33f?style=flat&logo=spring&logoColor=white)
+
+---
+
+## Installation & Setup
+1. Download the repository
+   [![Download RecipeBox](https://img.shields.io/badge/⬇️%20Download-RecipeBox-blue?style=for-the-badge&logo=github)](https://github.com/Nedev-Miroslav/RecipeBox/archive/refs/heads/main.zip)
