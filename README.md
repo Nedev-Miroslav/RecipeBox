@@ -30,3 +30,11 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ## Installation & Setup
 1. Download the repository <br>
    [![Download RecipeBox](https://img.shields.io/badge/⬇️%20Download-RecipeBox-blue?style=for-the-badge&logo=github)](https://github.com/Nedev-Miroslav/RecipeBox/archive/refs/heads/main.zip)
+2. Database Configuration (MySQL) <br>
+   - You do not need to manually create the database because it will be created automatically if it does not exist;
+   - However, make sure MySQL is installed and running on your machine;
+   - In application.yml file you need to apply your Username and password for the datasource - MySQL.
+3. Run the project
+4. Access the application
+   Once the server starts, open your browser and visit:
+   🔗 http://localhost:8081
