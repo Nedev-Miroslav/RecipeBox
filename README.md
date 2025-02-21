@@ -12,7 +12,7 @@ Personal Project
 ---
 
 ## Description:
-A simple and user-friendly web application for managing, sharing, and discovering recipes.
+A simple and user-friendly web application for managing, sharing, and discovering recipes. <br>
 Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=java&logoColor=white) 
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6db33f?style=flat&logo=spring&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479a1?style=flat&logo=mysql&logoColor=white)
