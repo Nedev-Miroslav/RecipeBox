@@ -35,6 +35,5 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
    - However, make sure MySQL is installed and running on your machine;
    - In application.yml file you need to apply your Username and password for the datasource - MySQL.
 3. Run the project
-4. Access the application
-   Once the server starts, open your browser and visit:
-   🔗 http://localhost:8081
+4. Access the application <br>
+   - Once the server starts, open your browser and visit: http://localhost:8081
