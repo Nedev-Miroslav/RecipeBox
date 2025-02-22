@@ -37,3 +37,11 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 3. Run the project
 4. Access the application <br>
    - Once the server starts, open your browser and visit: http://localhost:8081
+
+---
+
+## User Authentication
+ - Regular Users can add recipe, edit and delete his own recipes, also can browse, search, and add to favorite recipes.
+ - Admin Users can add recipes, also can edit and delete all recipes.
+ - Login Page: /users/login
+ - Register Page: /users/register
