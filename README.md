@@ -43,5 +43,8 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ## User Authentication
  - Regular Users can add recipe, edit and delete his own recipes, also can browse, search, and add to favorite recipes.
  - Admin Users can add recipes, also can edit and delete all recipes.
+ - Default Admin Account:
+   - Username: Admin  
+   - Password: admin (hashed in DB)
  - Login Page: /users/login
  - Register Page: /users/register
