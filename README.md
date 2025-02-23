@@ -52,13 +52,13 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ---
 
 ## Features
--  **Recipe Management:** Add, edit, and delete your own recipes with images and detailed descriptions.
--  **Smart Search:** Search recipes by **partial or full name**, making it easy to find what you’re looking for.
--  **Favorites:** Save your favorite recipes for quick access later.
--  **My Recipes Section:** View all the recipes you’ve personally added, making it easy to manage your own content.
--  **Comments:** Leave and read comments on recipes.
--  **User Authentication:** Register and log in with different roles (User/Admin).
-- ️ **Admin Privileges:** Admins can manage all recipes and users.
+ -  **Recipe Management:** Add, edit, and delete your own recipes with images and detailed descriptions.
+ -  **Smart Search:** Search recipes by **partial or full name**, making it easy to find what you’re looking for.
+ -  **Favorites:** Save your favorite recipes for quick access later.
+ -  **My Recipes Section:** View all the recipes you’ve personally added, making it easy to manage your own content.
+ -  **Comments:** Leave and read comments on recipes.
+ -  **User Authentication:** Register and log in with different roles (User/Admin).
+ - ️ **Admin Privileges:** Admins can manage all recipes and users.
 
 ---
 
