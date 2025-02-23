@@ -48,3 +48,13 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
    - Password: admin (hashed in DB)
  - Login Page: /users/login
  - Register Page: /users/register
+
+---
+
+##  Screenshots
+
+
+---
+
+## License
+This project is licensed under the MIT License.
