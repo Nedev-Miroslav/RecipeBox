@@ -64,6 +64,10 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ##  Screenshots
 
+### 🔐 Authentication
+- **Login Page**  
+  ![Login Page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/loginPage.png)
+
 
 ---
 
