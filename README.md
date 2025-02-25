@@ -76,6 +76,9 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 - **Home Page En**  
   ![Home Page En](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/homePage.png)
 
+- **Home Page Bg**  
+  ![Home Page En](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/homePageBg.png)
+
 ---
 
 ## License
