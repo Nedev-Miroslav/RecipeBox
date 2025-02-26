@@ -81,7 +81,8 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ###  Recipes Management
 - **Add recipe page**  
   ![Add recipe page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/addRecipePage.png)
-
+- **All Recipes View**  
+  ![All Recipes](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/allRecipesPage.png)
 
 ---
 
