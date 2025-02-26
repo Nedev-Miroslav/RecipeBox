@@ -67,7 +67,6 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ### Authentication
 - **Login Page**  
   ![Login Page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/loginPage.png)
-
 - **Register Page**  
   ![Register Page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/registerPage.png)
 
@@ -75,9 +74,14 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ### Home page
 - **Home Page En**  
   ![Home Page En](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/homePage.png)
-
 - **Home Page Bg**  
   ![Home Page Bg](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/homePageBg.png)
+
+
+###  Recipes Management
+- **Add recipe page**  
+  ![Add recipe page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/addRecipePage.png)
+
 
 ---
 
