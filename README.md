@@ -83,6 +83,8 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
   ![All recipes page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/allRecipesPage.png)
 - **Recipe detail page**  
   ![Recipe detail page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/recipeDetailPage.png)
+- **My Recipes page**  
+  ![My Recipes page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/myRecipesPage.png)
 
 ---
 
