@@ -50,7 +50,9 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 3. **Add Your Own**
     - Easily add new recipes with ingredients, steps, and images.
     - Edit or delete your own recipes anytime.
-
+4. **Save Favorites**
+    - Bookmark your favorite recipes for quick access later.
+    - Manage your saved recipes in the **Favorites section**.
 
 ---
 
