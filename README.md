@@ -41,9 +41,15 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 ---
 
 ## How It Works:
-1. **Sign Up / Log In** 📝
+1. **Sign Up / Log In**
    - Create a new account or log in with existing credentials.
    - Secure authentication with **Spring Security**.
+2. **Browse Recipes**
+    - Discover a variety of user-shared recipes.
+    - Use the **smart search** feature to find recipes by name.
+3. **Add Your Own**
+    - Easily add new recipes with ingredients, steps, and images.
+    - Edit or delete your own recipes anytime.
 
 
 ---
