@@ -27,7 +27,7 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ---
 
-## Installation & Setup
+## Installation & Setup:
 1. Download the repository <br>
    [![Download RecipeBox](https://img.shields.io/badge/⬇️%20Download-RecipeBox-blue?style=for-the-badge&logo=github)](https://github.com/Nedev-Miroslav/RecipeBox/archive/refs/heads/main.zip)
 2. Database Configuration (MySQL) <br>
@@ -40,7 +40,15 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ---
 
-## User Authentication
+## How It Works:
+1. **Sign Up / Log In** 📝
+   - Create a new account or log in with existing credentials.
+   - Secure authentication with **Spring Security**.
+
+
+---
+
+## User Authentication:
  - Regular Users can add recipe, edit and delete his own recipes, also can browse, search, and add to favorite recipes.
  - Admin Users can add recipes, also can edit and delete all recipes.
  - Default Admin Account:
@@ -51,7 +59,7 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ---
 
-## Features
+## Features:
  -  **Recipe Management:** Add, edit, and delete your own recipes with images and detailed descriptions.
  -  **Smart Search:** Search recipes by **partial or full name**, making it easy to find what you’re looking for.
  -  **Favorites:** Save your favorite recipes for quick access later.
@@ -62,7 +70,7 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ---
 
-##  Screenshots
+##  Screenshots:
 
 ### Authentication
 - **Login Page**  
@@ -88,5 +96,5 @@ Built with: ![Java](https://img.shields.io/badge/Java-f89820?style=flat&logo=jav
 
 ---
 
-## License
+## License:
 This project is licensed under the MIT License.
