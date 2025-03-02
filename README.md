@@ -29,54 +29,55 @@ A simple and user-friendly web application for managing, sharing, and discoverin
 ---
 
 ## 📦 Installation & Setup
-1. Download the repository <br>
+1. ⬇️ **Download the repository**  
    [![Download RecipeBox](https://img.shields.io/badge/⬇️%20Download-RecipeBox-blue?style=for-the-badge&logo=github)](https://github.com/Nedev-Miroslav/RecipeBox/archive/refs/heads/main.zip)
-2. Database Configuration (MySQL) <br>
-   - You do not need to manually create the database because it will be created automatically if it does not exist;
-   - However, make sure MySQL is installed and running on your machine;
-   - In application.yml file you need to apply your Username and password for the datasource - MySQL.
-3. Run the project
-4. Access the application <br>
-   - Once the server starts, open your browser and visit: http://localhost:8081
-
+2. 🛠 **Database Configuration (MySQL)**
+    - The database will be created automatically if it does not exist.
+    - Ensure **MySQL is installed and running** on your machine.
+    - In `application.yml`, set your **Username** and **Password** for MySQL.
+3. ▶️ **Run the project**
+4. 🌍 **Access the application**
+    - Open your browser and visit: **[http://localhost:8081](http://localhost:8081)**
 ---
 
 ## 🔍 How It Works
-1. **Sign Up / Log In**
-   - Create a new account or log in with existing credentials.
-   - Secure authentication with **Spring Security**.
-2. **Browse Recipes**
+1. **📝 Sign Up / Log In**
+    - Create a new account or log in with existing credentials.
+    - Secure authentication with **Spring Security**.
+2. **📖 Browse Recipes**
     - Discover a variety of user-shared recipes.
-    - Use the **smart search** feature to find recipes by name.
-3. **Add Your Own**
+    - Use the **🔎 smart search** feature to find recipes by name.
+3. **🍽️ Add Your Own**
     - Easily add new recipes with ingredients, steps, and images.
-    - Edit or delete your own recipes anytime.
-4. **Save Favorites**
-    - Bookmark your favorite recipes for quick access later.
-    - Manage your saved recipes in the **Favorites section**.
+    - ✏️ Edit or ❌ delete your own recipes anytime.
+4. **⭐ Save Favorites**
+    - ❤️ Bookmark your favorite recipes for quick access later.
+    - 📂 Manage your saved recipes in the **Favorites section**.
 
 ---
 
 ## 🔑 User Authentication
- - Regular Users can add recipe, edit and delete his own recipes, also can browse, search, and add to favorite recipes.
- - Admin Users can add recipes, also can edit and delete all recipes.
- - Default Admin Account:
-   - Username: Admin  
-   - Password: admin (hashed in DB)
- - Login Page: /users/login
- - Register Page: /users/register
+- 👤 **Regular Users**:
+    - Can **add, edit, and delete** their own recipes.
+    - Can **browse, search, and save** recipes as favorites.
+- 👑 **Admin Users**:
+    - Can **add, edit, and delete** all recipes.
+- 🔐 **Default Admin Account**:
+    - **Username**: `Admin`
+    - **Password**: `admin` (hashed in DB)
+- 🔗 **Login Page**: `/users/login`
+- 📝 **Register Page**: `/users/register`
 
 ---
 
 ## ✨ Features
- -  **Recipe Management:** Add, edit, and delete your own recipes with images and detailed descriptions.
- -  **Smart Search:** Search recipes by **partial or full name**, making it easy to find what you’re looking for.
- -  **Favorites:** Save your favorite recipes for quick access later.
- -  **My Recipes Section:** View all the recipes you’ve personally added, making it easy to manage your own content.
- -  **Comments:** Leave and read comments on recipes.
- -  **User Authentication:** Register and log in with different roles (User/Admin).
- - ️ **Admin Privileges:** Admins can manage all recipes and users.
-
+✔️ **🍳 Recipe Management** – Add, edit, and delete your own recipes with images and detailed descriptions.  
+✔️ **🔎 Smart Search** – Find recipes easily by **partial or full name**.  
+✔️ **⭐ Favorites** – Save and manage your favorite recipes.  
+✔️ **📌 My Recipes Section** – View all the recipes you’ve personally added.  
+✔️ **💬 Comments** – Leave and read comments on recipes.  
+✔️ **🔐 User Authentication** – Secure login with different roles (User/Admin).  
+✔️ **🛠 Admin Privileges** – Manage all recipes and users.
 ---
 
 ## 📸 Screenshots
