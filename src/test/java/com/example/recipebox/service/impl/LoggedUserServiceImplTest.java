@@ -2,6 +2,7 @@ package com.example.recipebox.service.impl;
 
 import com.example.recipebox.model.entity.User;
 import com.example.recipebox.repository.UserRepository;
+import com.example.recipebox.service.LoggedUserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,14 +10,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;;
+import static org.mockito.Mockito.*;
+
+
 
 @ExtendWith(MockitoExtension.class)
 public class LoggedUserServiceImplTest {
@@ -78,9 +83,37 @@ public class LoggedUserServiceImplTest {
         // Assert
         assertNull(result);
 
-
     }
 
+    @Test
+    public void hasRoleShouldReturnTrueWhenUserHasRole(){
+        // Arrange
+        GrantedAuthority grantedAuthority = () -> "ROLE_ADMIN";
+        doReturn(Collections.singletonList(grantedAuthority)).when(mockAuthentication).getAuthorities();
+        when(mockSecurityContext.getAuthentication()).thenReturn(mockAuthentication);
+        SecurityContextHolder.setContext(mockSecurityContext);
+
+        // Act
+        boolean result = loggedUserServiceToTest.hasRole("ADMIN");
+
+        // Assert
+        assertTrue(result);
+    }
+
+
+    @Test
+    void testHasRoleShouldReturnFalseWhenUserDoesNotHaveRole() {
+        // Arrange
+        when(mockAuthentication.getAuthorities()).thenReturn(Collections.emptyList());
+        when(mockSecurityContext.getAuthentication()).thenReturn(mockAuthentication);
+        SecurityContextHolder.setContext(mockSecurityContext);
+
+        // Act
+        boolean result = loggedUserServiceToTest.hasRole("ADMIN");
+
+        // Assert
+        assertFalse(result);
+    }
 
 
 
