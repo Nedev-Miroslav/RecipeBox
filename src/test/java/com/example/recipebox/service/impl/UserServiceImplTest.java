@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
@@ -24,6 +25,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class UserServiceImplTest {
 
+    @InjectMocks
     private UserServiceImpl userServiceToTest;
 
     @Captor
@@ -35,7 +37,7 @@ public class UserServiceImplTest {
     @Mock
     private RoleRepository mockRoleRepository;
 
-    private final ModelMapper modelMapper = new ModelMapper();
+    private ModelMapper modelMapper = new ModelMapper();
 
     @Mock
     private PasswordEncoder mockPasswordEncoder;
