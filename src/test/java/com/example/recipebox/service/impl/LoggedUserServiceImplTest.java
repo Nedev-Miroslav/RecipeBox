@@ -2,7 +2,6 @@ package com.example.recipebox.service.impl;
 
 import com.example.recipebox.model.entity.User;
 import com.example.recipebox.repository.UserRepository;
-import com.example.recipebox.service.LoggedUserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +18,8 @@ import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.when;
 
 
 
@@ -102,7 +102,7 @@ public class LoggedUserServiceImplTest {
 
 
     @Test
-    void testHasRoleShouldReturnFalseWhenUserDoesNotHaveRole() {
+    public void testHasRoleShouldReturnFalseWhenUserDoesNotHaveRole() {
         // Arrange
         when(mockAuthentication.getAuthorities()).thenReturn(Collections.emptyList());
         when(mockSecurityContext.getAuthentication()).thenReturn(mockAuthentication);
@@ -115,6 +115,34 @@ public class LoggedUserServiceImplTest {
         assertFalse(result);
     }
 
+    @Test
+    public void testIsAuthenticatedShouldReturnTrueWhenUserIsNotAnonymous() {
+        // Arrange
+        GrantedAuthority grantedAuthority = () -> "ROLE_USER";
+        doReturn(Collections.singletonList(grantedAuthority)).when(mockAuthentication).getAuthorities();
+        when(mockSecurityContext.getAuthentication()).thenReturn(mockAuthentication);
+        SecurityContextHolder.setContext(mockSecurityContext);
 
+        // Act
+        boolean result = loggedUserServiceToTest.isAuthenticated();
+
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    void testIsAuthenticatedShouldReturnFalseWhenUserIsAnonymous() {
+        // Arrange
+        GrantedAuthority grantedAuthority = () -> "ROLE_ANONYMOUS";
+        doReturn(Collections.singletonList(grantedAuthority)).when(mockAuthentication).getAuthorities();
+        when(mockSecurityContext.getAuthentication()).thenReturn(mockAuthentication);
+        SecurityContextHolder.setContext(mockSecurityContext);
+
+        // Act
+        boolean result = loggedUserServiceToTest.isAuthenticated();
+
+        // Assert
+        assertFalse(result);
+    }
 
 }
