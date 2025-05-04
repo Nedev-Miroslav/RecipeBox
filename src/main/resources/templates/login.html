@@ -13,7 +13,7 @@
               th:method="POST"
               th:action="@{/users/login}"
               th:object="${loginData}"
-              class="mx-auto w-25 bg-blur rounded">
+              class="form-responsive mx-auto w-25 bg-blur rounded">
 
         <div>
           <div class=" bg-danger rounded"  th:if="${showError}" th:text="#{incorrect_username_or_password}">Incorrect username or password!</div>

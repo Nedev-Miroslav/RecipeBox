@@ -9,7 +9,7 @@
     <h1 class="text-center mt-3"><span class="badge my-title" th:text="#{edit_recipe}">Edit Recipe</span></h1>
 
     <form
-            class="mx-auto w-25 bg-blur rounded"
+            class="form-responsive mx-auto w-25 bg-blur rounded"
             th:method="POST"
             th:action="@{/recipe-edit/{id}(id=${recipeId})}"
             th:object="${recipeData}"

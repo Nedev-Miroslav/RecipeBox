@@ -1,3 +1,9 @@
+@media (max-width: 576px) {
+    .form-responsive {
+        width: 100% !important;
+    }
+}
+
 html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
