@@ -82,6 +82,11 @@ A simple and user-friendly web application for managing, sharing, and discoverin
 
 ## 📸 Screenshots
 
+### 🌐 Live Deployment
+- **Live Azure Link Preview**  
+  ![Live Deployment Screenshot](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/deployedToAzure.jpg)
+
+
 ### 🔑 Authentication
 - **Login Page**  
   ![Login Page](https://github.com/Nedev-Miroslav/RecipeBox/blob/main/src/main/resources/static/images/screenshots/loginPage.png)
